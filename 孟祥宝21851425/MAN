@@ -1,0 +1,65 @@
+
+.\" author : JuicyITer
+
+.TH jcal 1 "October 18, 2018" "JuicyITer" "JIT Calendar"
+
+.sp
+.SH NAME
+\fBjcal\fR \-\- displays a calendar
+
+.sp
+.SH SYNOPSIS
+\fBjcal\fR [\fB\-3L\fR] [[\fImonth\fR] [\fIyear\fR]]
+
+.sp
+\fBjcal\fR [\fB\-3L\fR] \fB\-m\fR \fImonth\fR [\fIyear\fR]
+
+.sp
+.SH DESCRIPTION
+The \fBjcal\fR displays a simple calendar in tradition format\&.
+
+.sp
+The weekday symbols are locale and language oriented,
+so if your system language is non-english or your locale where gregorian calendar is not the default one,
+the calendar could be wild wide!
+Otherwise, a 27x13 terminal should be suffice a month\&.
+For the year, do the math~
+
+.sp
+The options are as follows:
+
+.sp
+.TP
+\fB\-3\fR
+Display the previous, current and next month surrounding today\&.
+
+.TP
+\fB\-L\fR
+Display the lunar (along with gregorian) calendar\&.
+
+.TP
+\fB\-m\fR \fImonth\fR
+Display the specified \fImonth\fR\&.
+
+.TP
+\fB\-h\fR
+Display the manual, which you're reading now\&.
+
+.RS 0
+.sp
+A single parameter specifies the year (1-9999) to be displayed\&.
+Note the year must be fully specifed: ``jcal 18'' will \fInot\fR display a calendar for 2018\&.
+Two parameters denote the month and the year\&.
+The month is a number between 1 and 12\&.
+Month and year default to those of the current system clock and time zone (so ``jcal -m 10'' will display a calendar for the month of October in the current year)\&.
+
+.sp
+These options can be used together. For instance ``-3 -L -m 10'' would mean: show me the three month around the tenth month with lunar date\&.
+
+.sp
+Highlighting of dates is setting the font foreground color to red, so if your terminal's background is red, it could be ambiguous\&.
+Underline is always supported\&.
+
+.sp
+.SH AUTHOR
+The jcal command and manual were written by JuicyITer <\fIcontactme@juicyiter.com\fR>\&.
