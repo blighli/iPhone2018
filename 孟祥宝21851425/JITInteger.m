@@ -49,7 +49,6 @@
     return max;
 }
 
-
 + (NSInteger)getWeekdayIndexFromComponents:(JITDateComponents *)comps
 {
     NSDate *date = [comps.calendar dateFromComponents:comps];

@@ -20,9 +20,13 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSInteger)maxLengthInStrings:(NSMutableArray *)arr;
 
 + (NSInteger)getWeekdayIndexFromComponents:(JITDateComponents *)comps;
+
 + (NSInteger)getLine:(NSInteger)index;
+
 + (NSInteger)isLastInWeek:(NSInteger)index;
+
 + (NSInteger)maxWidthOfString:(NSString *)str;
+
 @end
 
 NS_ASSUME_NONNULL_END

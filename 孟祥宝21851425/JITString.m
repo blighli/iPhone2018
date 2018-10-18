@@ -60,7 +60,7 @@
         for(int i = 0; i < maxLength - length; i++){
             outString = [outString stringByAppendingString:@" "];
         }
-        //outString = [JITDateOut beautifyString:outString];
+        
         NSInteger dayNum = [JITInteger numberFromString:arr[i]];
         
         NSString *dayString = [JITString beautifyString:arr[i]
@@ -128,9 +128,9 @@
 {
     
     NSString *start = [origin substringToIndex:index];
-    //NSLog(@"start = %@", start);
+    
     NSString *end = [origin substringFromIndex:index];
-    //NSLog(@"end = %@", end);
+    
     NSString *string = [NSString string];
     string = [string stringByAppendingString:start];
     string = [string stringByAppendingString:str];
@@ -151,7 +151,7 @@
     for(NSInteger i = 0; i < (width - [JITInteger stringLength:str]) / 2; i++){
         outS = [outS stringByAppendingString:@" "];
     }
-    //outS = [outS stringByAppendingString:@"\n"];
+    
     return outS;
 }
 
@@ -188,7 +188,7 @@
         }
         else{
             NSInteger line = [JITInteger getLine:i];
-            //NSLog(@"%ld", line);
+            
             stringArr[line] = [stringArr[line] stringByAppendingString:arr[i]];
             if([JITInteger isLastInWeek:i]){
                 if(i + COUNT > [arr count]){

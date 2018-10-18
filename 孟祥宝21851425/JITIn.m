@@ -19,13 +19,13 @@
             
             if([argList count] > 1 && [argList[1] isEqualToString:@"-L"]){
                 if([argList count] > 2 && [argList[2] isEqualToString:@"-m"])
-                    [JITIn handleParameters:argList withOption:1];  // 1 -3-L-m
+                    [JITIn handleParameters:argList withOption:1];      // 1 -3-L-m
                 else
-                    [JITIn handleParameters:argList withOption:2];    // 2 -3-L
+                    [JITIn handleParameters:argList withOption:2];      // 2 -3-L
             }
             else{
                 if([argList count] > 2 && [argList[2] isEqualToString:@"-m"])
-                    [JITIn handleParameters:argList withOption:3];    // 3 -3-m
+                    [JITIn handleParameters:argList withOption:3];      // 3 -3-m
                 else
                     [JITIn handleParameters:argList withOption:4];      // 4 -3
             }
@@ -34,13 +34,13 @@
             
             if([argList count] > 1 && [argList[1] isEqualToString:@"-3"]){
                 if([argList count] > 2 && [argList[2] isEqualToString:@"-m"])
-                    [JITIn handleParameters:argList withOption:5];  // 5 -3-L-m
+                    [JITIn handleParameters:argList withOption:5];      // 5 -3-L-m
                 else
-                    [JITIn handleParameters:argList withOption:6];    // 6 -3-L
+                    [JITIn handleParameters:argList withOption:6];      // 6 -3-L
             }
             else{
                 if([argList count] > 1 && [argList[1] isEqualToString:@"-m"])
-                    [JITIn handleParameters:argList withOption:7];    // 7 -L-m
+                    [JITIn handleParameters:argList withOption:7];      // 7 -L-m
                 else
                     [JITIn handleParameters:argList withOption:8];      // 8 -L
             }
@@ -48,14 +48,14 @@
             
         }
         else if([option isEqualToString:@"-m"])
-            [JITIn handleParameters:argList withOption:9];              // 9 -m
+        [JITIn handleParameters:argList withOption:9];                  // 9 -m
         else if([option isEqualToString:@"-h"])
             system("man $PWD/MAN");
         else
             [JITError illegalOption:option];
     }
     else
-        [JITIn handleParameters:argList withOption:0];                    // 0
+    [JITIn handleParameters:argList withOption:0];                      // 0
 }
 
 + (void)handleParameters:(NSMutableArray *)argList
@@ -95,6 +95,7 @@
                 [JITError requireArgument];
         
             break;
+            
         case 2:
         case 6:
             // lunar adjacent months. op: -3-L
@@ -131,6 +132,7 @@
                 
             
             break;
+            
         case 3:
             // gregorian adjacent months. op: -3-m
             // arguments should be exact
@@ -163,6 +165,7 @@
                 [JITError requireArgument];
             
             break;
+            
         case 4:
             // gregorian adjacent months. op: -3
             if([argList count] > 4)
@@ -197,7 +200,6 @@
             
             break;
         
-        
         case 7:
             // lunar month. op: -L-m
             // arguments should be exact
@@ -230,6 +232,7 @@
                 [JITError requireArgument];
             
             break;
+            
         case 8:
             // lunar month or year. op: -L
            
@@ -264,6 +267,7 @@
             }
             
             break;
+            
         case 9:
             // gregorian month. op: -m
             if([argList count] > 4)
@@ -295,6 +299,7 @@
                 [JITError requireArgument];
             
             break;
+            
         case 0:
             // gregorian month or year. op:
             
@@ -329,7 +334,7 @@
             }
             
             break;
-        default:
+        default: // Make it a bonus.
             break;
     }
 }

@@ -30,6 +30,7 @@
     JITDateComponents *comps = [JITDateComponents newDateWithDay:1 month:month year:year];
     return comps;
 }
+
 + (instancetype)newDateWithYear:(NSInteger)year
 {
     JITDateComponents *comps = [JITDateComponents newDateWithMonth:1 year:year];

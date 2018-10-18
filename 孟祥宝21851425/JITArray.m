@@ -92,11 +92,7 @@
             // Convert the day(integer) to string
             JITDateComponents *cComps = [comps convertToChinese];
             NSString *day = [NSString alloc];
-//            if(cComps.day == 1)
-//                day = [day initWithFormat:@"%ld[%ld.%ld]", i, cComps.month, cComps.day];
-//            else
-//                day = [day initWithFormat:@"%ld[%ld]", i, cComps.day];
-            
+
             if(cComps.day == 1)
                 day = [day initWithFormat:@"%ld[%ld.%ld]", i, cComps.month, cComps.day];
             else
@@ -156,7 +152,7 @@
         for(int i = 0; i < maxLength - length; i++){
             outString = [outString stringByAppendingString:@" "];
         }
-        //outString = [JITDateOut beautifyString:outString];
+        
         NSInteger dayNum = [JITInteger numberFromString:arr[i]];
         
         NSString *dayString = [JITString beautifyString:arr[i]
@@ -166,9 +162,6 @@
         
         outString = [outString stringByAppendingString:dayString];
         
-//        if((i % [comps.calendar.weekdaySymbols count] == 0) | (i == [arr count] - 1))
-//            outString = [outString stringByAppendingString:@"\n"];
-//        else
         outString = [outString stringByAppendingString:@" "];
         
         [arr replaceObjectAtIndex:i withObject:outString];
@@ -230,7 +223,7 @@
     [arr addObjectsFromArray:before];
     [arr addObjectsFromArray:current];
     [arr addObjectsFromArray:after];
-    //NSLog(@"%@", arr);
+
     
     
 }
@@ -242,7 +235,6 @@
     
     NSMutableArray *before = [[NSMutableArray alloc] init];
     NSMutableArray *current = [[NSMutableArray alloc] init];
-    //NSMutableArray *after = [[NSMutableArray alloc] init];
     NSInteger month = comps.month;
     NSInteger year = comps.year;
     
@@ -269,27 +261,8 @@
                     inComps:comps
                   withStyle:CHINESE];
     
-//    // After month array
-//    if(month == 12){
-//        comps.month = 1;
-//        comps.year = year + 1;
-//        [JITArray cOneMonthArray:after inComps:comps isWithYear:iYear];
-//
-//        // reset
-//        comps.year = year;
-//    }
-//    else{
-//        comps.month = month + 1;
-//        [JITArray cOneMonthArray:after inComps:comps isWithYear:iYear];
-//    }
-//
-//    [JITArray beautifyArray:after
-//                    inComps:comps
-//                  withStyle:CHINESE];
-    
     [arr addObjectsFromArray:before];
     [arr addObjectsFromArray:current];
-    //[arr addObjectsFromArray:after];
-    //NSLog(@"%@", arr);
+    
 }
 @end
