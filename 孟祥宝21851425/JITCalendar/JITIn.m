@@ -67,7 +67,7 @@
         case 5:
             // lunar adjacent months. op: -3-L-m
             // arguments should be exact
-            if([argList count] > 6)
+            if([argList count] > 5)
                 [JITError illegalUsage];
             else if([argList count] == 5){
                 NSInteger month = [JITInteger numberFromString:argList[3]];
@@ -100,7 +100,7 @@
         case 6:
             // lunar adjacent months. op: -3-L
             
-            if([argList count] > 5)
+            if([argList count] > 4)
                 [JITError illegalUsage];
             else if([argList count] == 4){
                 NSInteger month = [JITInteger numberFromString:argList[2]];
@@ -136,7 +136,7 @@
         case 3:
             // gregorian adjacent months. op: -3-m
             // arguments should be exact
-            if([argList count] > 5)
+            if([argList count] > 4)
                 [JITError illegalUsage];
             else if([argList count] == 4){
                 NSInteger month = [JITInteger numberFromString:argList[2]];
@@ -168,7 +168,7 @@
             
         case 4:
             // gregorian adjacent months. op: -3
-            if([argList count] > 4)
+            if([argList count] > 3)
                 [JITError illegalUsage];
             else if([argList count] == 3){
                 NSInteger month = [JITInteger numberFromString:argList[1]];
@@ -203,7 +203,7 @@
         case 7:
             // lunar month. op: -L-m
             // arguments should be exact
-            if([argList count] > 5)
+            if([argList count] > 4)
                 [JITError illegalUsage];
             else if([argList count] == 4){
                 NSInteger month = [JITInteger numberFromString:argList[2]];
@@ -236,7 +236,7 @@
         case 8:
             // lunar month or year. op: -L
            
-            if([argList count] > 4)
+            if([argList count] > 3)
                 [JITError illegalUsage];
             else if([argList count] == 3){
                 NSInteger month = [JITInteger numberFromString:argList[1]];
@@ -270,7 +270,7 @@
             
         case 9:
             // gregorian month. op: -m
-            if([argList count] > 4)
+            if([argList count] > 3)
                 [JITError illegalUsage];
             else if([argList count] == 3){
                 NSInteger month = [JITInteger numberFromString:argList[1]];
@@ -303,7 +303,7 @@
         case 0:
             // gregorian month or year. op:
             
-            if([argList count] > 3)
+            if([argList count] > 2)
                 [JITError illegalUsage];
             else if([argList count] == 2){
                 NSInteger month = [JITInteger numberFromString:argList[0]];
