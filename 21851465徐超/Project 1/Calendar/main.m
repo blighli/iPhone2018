@@ -14,78 +14,52 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        //  没有额外参数
         if (argc == 1) {
+            //  没有额外参数.
             [XCCalendar printCalendarOfCurrentMonth];
-        }
-        //  有一个额外参数，表示年份，取值范围1..9999
-        else if (argc == 2) {
+        } else if (argc == 2) {
+            //  有一个额外参数，表示年份，取值范围1..9999.
             NSString *yearStr = [NSString stringWithUTF8String:argv[1]];
-            if ([XCUtilities isPureInt:yearStr]) {
-                NSInteger year = [yearStr intValue];
-                if (year >= 1 && year <= 9999) {
-                    [XCCalendar printCalendarOfYear:year];
-                }
-                else {
-                    NSLog(@"Calendar: year `%@' not in range 1..9999", yearStr);
-                }
-            }
-            else {
+            if ([XCUtilities isPureInt:yearStr] && [yearStr intValue] >= 1 && [yearStr intValue] <= 9999) {
+                [XCCalendar printCalendarOfYear:[yearStr intValue]];
+            } else {
                 NSLog(@"Calendar: year `%@' not in range 1..9999", yearStr);
             }
-        }
-        //  有两个额外参数
-        else if (argc == 3) {
-            //  第一个额外参数为“-m”，第二个参数表示月份，取值d范围1..12
+        } else if (argc == 3) {
+            //  有两个额外参数.
             if ([[NSString stringWithUTF8String:argv[1]] isEqualToString:@"-m"]) {
+                //  第一个额外参数为“-m”，第二个参数表示月份，取值d范围1..12.
                 NSString *monthStr = [NSString stringWithUTF8String:argv[2]];
-                if ([XCUtilities isPureInt:monthStr]) {
-                    NSInteger month = [monthStr intValue];
-                    if (month >= 1 && month <= 12) {
-                        [XCCalendar printCalendarOfThisYearsMonth:month];
-                    }
-                    else {
-                        NSLog(@"Calendar: %@ is neither a month number (1..12) nor a name", monthStr);
-                    }
-                }
-                else {
+                if ([XCUtilities isPureInt:monthStr] && [monthStr intValue] >= 1 && [monthStr intValue] <= 12) {
+                    [XCCalendar printCalendarOfThisYearsMonth:[monthStr intValue]];
+                } else {
                     NSLog(@"Calendar: %@ is neither a month number (1..12) nor a name", monthStr);
                 }
-            }
-            //  第一个参数表示月份，取值d范围1..12，第二个参数表示年份，取值范围1..9999
-            else {
+                
+            } else {
+                //  第一个参数表示月份，取值范围1..12，第二个参数表示年份，取值范围1..9999.
                 NSString *monthStr = [NSString stringWithUTF8String:argv[1]];
                 if ([XCUtilities isPureInt:monthStr]) {
                     NSInteger month = [monthStr intValue];
                     if (month >= 1 && month <= 12) {
                         NSString *yearStr = [NSString stringWithUTF8String:argv[2]];
-                        if ([XCUtilities isPureInt:yearStr]) {
-                            NSInteger year = [yearStr intValue];
-                            if (year >= 1 && year <= 9999) {
-                                [XCCalendar printCalendarOfMonth:month inYear:year];
-                            }
-                            else {
-                                NSLog(@"Calendar: year `%@' not in range 1..9999", yearStr);
-                            }
-                        }
-                        else {
+                        if ([XCUtilities isPureInt:yearStr] && [yearStr intValue] >= 1 && [yearStr intValue] <= 9999) {
+                            [XCCalendar printCalendarOfMonth:month inYear:[yearStr intValue]];
+                        } else {
                             NSLog(@"Calendar: year `%@' not in range 1..9999", yearStr);
                         }
-                    }
-                    else {
+                    } else {
                         NSLog(@"Calendar: %@ is neither a month number (1..12) nor a name", monthStr);
                     }
-                }
-                else {
+                } else {
                     NSLog(@"Parameter Error！！！");
-                    NSLog(@"Usage: month year\t(e.g. 1 1970)\n       year\t\t(e.g. 1970)\n       -m month\t\t(e.g. -m 1)");
+                    NSLog(@"Usage: [month] [year]\t(e.g. 1 1970)\n       [year]\t\t(e.g. 1970)\n       [-m month]\t(e.g. -m 1)");
                 }
             }
-        }
-        //  额外参数数量超过两个
-        else {
+        } else {
+            //  额外参数数量超过两个.
             NSLog(@"Parameter Error！！！");
-            NSLog(@"Usage: month year\n       year\n       -m month");
+            NSLog(@"Usage: [month] [year]\t(e.g. 1 1970)\n       [year]\t\t(e.g. 1970)\n       [-m month]\t(e.g. -m 1)");
         }
     }
     return 0;

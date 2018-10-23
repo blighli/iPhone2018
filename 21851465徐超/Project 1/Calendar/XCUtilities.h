@@ -10,12 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ *  通用工具类.
+ */
 @interface XCUtilities : NSObject
 
 /**
- *  判断一个NSString对象是否是一个整数
- *  @param str 受查NSString对象
- *  @retuan 是一个整数返回YES；否则，返回NO
+ *  判断一个NSString对象是否是一个整数.
+ *
+ *  @param str 受查NSString对象.
+ *  @retuan 是一个整数返回YES；否则，返回NO.
  */
 + (BOOL)isPureInt:(NSString *)str;
 
