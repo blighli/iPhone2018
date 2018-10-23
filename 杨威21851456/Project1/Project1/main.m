@@ -41,7 +41,7 @@ int main(int argc, const char * argv[]) {
                 [[CalendarHelper Instance] printYear:atoi(argv[2])];
             }
         }else{
-            NSLog(@"");
+            NSLog(@"input error!");
         }
         
     }
