@@ -16,11 +16,12 @@
     NSDateComponents *highlightingDay;
 }
 
-- (void) addMonthBlock:(int) month inYear: (int) year;
-- (void) addMonthBlock:(int) firstDayInWeek withMonth:(int)month withYear:(int) year dayInMonth:(int)day;
+- (void) addMonthBlockWithMonth:(int) month andYear: (int) year;
+- (void) addMonthBlockWithFirstDayInWeek:(int) firstDayInWeek andMonth:(int)month andYear:(int) year dayInMonth:(int)day;
 - (void) print ;
 - (void) printWithCol:(int)col;
 - (id) initWithHighlightingDay:(NSDateComponents *) highlightingDay;
+- (void) addMonthBlockWithMonthInterval:(int) interval andMonth:(int) month andYear: (int) year;
 
 @end
 

@@ -17,9 +17,6 @@
     if (self) {
         printer = [NSMutableArray array];
         monthName = [NSArray arrayWithObjects:@"Jan",@"Feb",@"Mar",@"Apr",@"May",@"June",@"July",@"Aug",@"Sept",@"Oct",@"Nov",@"Dec", nil];
-        if (highlightingDay == nil) {
-            highlightingDay = [[NSDateComponents alloc] init];
-        }
     }
     return self;
 }
@@ -42,10 +39,11 @@
     [printer addObject:[NSString stringWithFormat:@"         %2d          ", month]];
 }
 
-- (void) addMonthBlock:(int) month inYear: (int) year {
+- (void) addMonthBlockWithMonth:(int) month andYear: (int) year {
     @autoreleasepool {
         int week;
-        
+        if (month < 1 || month > 12)
+            return;
         NSDateComponents *comps = [[NSDateComponents alloc] init];
         [comps setDay:1];
         [comps setMonth:month];
@@ -61,7 +59,7 @@
         
         [[NSCalendar currentCalendar] rangeOfUnit:NSCalendarUnitMonth startDate:&beginDate interval:&interval forDate:date];
         
-        [self addMonthBlock:week withMonth:month withYear:year dayInMonth:(int)interval / 60 / 60 / 24];
+        [self addMonthBlockWithFirstDayInWeek:week andMonth:month andYear:year dayInMonth:(int)interval / 60 / 60 / 24];
     }
 }
 
@@ -85,11 +83,13 @@
     [printer addObject:@"                     "];
 }
 
-- (void) addMonthBlock:(int) firstDayInWeek withMonth:(int)month withYear:(int) year dayInMonth:(int)day {
+- (void) addMonthBlockWithFirstDayInWeek:(int) firstDayInWeek andMonth:(int)month andYear:(int) year dayInMonth:(int)day {
+    if (month < 1 || month > 12)
+        return;
     [self addTitleRowWithYear:year Month:month];
     [self addWeekRow];
     int hightlight = 0;
-    if ([highlightingDay month] == month && [highlightingDay year] == year) {
+    if (highlightingDay != nil && [highlightingDay month] == month && [highlightingDay year] == year) {
         hightlight = (int)[highlightingDay day];
     }
     int col = firstDayInWeek;
@@ -109,6 +109,21 @@
     for (int i = 5; i > row; i--) {
         [self addBlankRow];
     }
+}
+
+- (void) addMonthBlockWithMonthInterval:(int) interval andMonth:(int) month andYear: (int) year  {
+    month += interval;
+    if (month < 1) {
+        year += (month - 12) / 12;
+        month = (month) % 12 + 12;
+    } else if (month > 12) {
+        year += (month - 1) / 12;
+        month = (month - 1) % 12 + 1;
+    }
+    if (year < 1 || year > 9999) {
+        return;
+    }
+    [self addMonthBlockWithMonth:month andYear:year];
 }
 
 - (void) print {
