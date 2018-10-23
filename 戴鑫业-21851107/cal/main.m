@@ -38,8 +38,8 @@ int main(int argc, const char * argv[]) {
                         if([cal validateYear:argv[1]]){
                             year = [[NSString stringWithUTF8String:argv[1]] intValue];
                             [cal printYearCal:year];
-                            return 1;
                         }
+                        return 1;
                     }
                     break;
                 case 3:
