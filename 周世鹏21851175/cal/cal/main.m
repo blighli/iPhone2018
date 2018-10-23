@@ -11,8 +11,8 @@
 #import "cal.h"
 
 void printUsage () {
-    printf("Usage: cal [-h] [-c col] [[month] year]\r\n"
-           "       cal [-h] [-c col] [-m month] [year]\r\n"
+    printf("Usage: cal [-3hy] [-A number] [-B number] [-c col] [[month] year]\r\n"
+           "       cal [-3h] [-A number] [-B number] [-c col] [-m month] [year]\r\n"
            "Options:\r\n"
            "        -m month    Display the specified month.\r\n"
            "        -h          Turns off highlighting of today.\r\n"
@@ -119,6 +119,9 @@ int main(int argc, const char * argv[]) {
                 showError("month must between 1 and 12!");
                 return 0;
             }
+        } else if (argc > 2){
+            showError("argument error!");
+            return 0;
         }
         if (flag_3 && flag_year != 0 && flag_month == 0) {
             showError("-3 together with a given year but no given month is not supported.");
@@ -126,6 +129,10 @@ int main(int argc, const char * argv[]) {
         }
         
         NSDateComponents *now = [[NSCalendar currentCalendar] components:NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitDay fromDate:[NSDate date]];
+        
+        if (flag_showYear && !flag_year) {
+            flag_year = (int)[now year];
+        }
         
         Cal *c;
         if (flag_h == 1) {
