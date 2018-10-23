@@ -1,4 +1,6 @@
-Usage: cal [-3hy] [-A number] [-B number] [-c col] [[month] year]
+```
+Usage: 
+       cal [-3hy] [-A number] [-B number] [-c col] [[month] year]
        cal [-3h] [-A number] [-B number] [-c col] [-m month] [year]
 Options:
         -m month    Display the specified month.
@@ -8,3 +10,4 @@ Options:
         -A number   Display the number of months after the current month.
         -B number   Display the number of months before the current month.
         -H          Help
+```
