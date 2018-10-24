@@ -64,7 +64,7 @@
 //格式问题：将中文“日 一 二 三 四 五 六”改为“Su Mo Tu We Th Fr Sa”
 - (void)printMonth {
     NSArray *dayInMonth = [[NSArray alloc]
-                           initWithObjects:@31, @28, @31, @30, @31, @30, @31, @31, @30, @31, @30, @31, nil];
+                               initWithObjects:@31, @28, @31, @30, @31, @30, @31, @31, @30, @31, @30, @31, nil];
     NSArray *dayInMonthLeap = [[NSArray alloc]
                                initWithObjects:@31, @29, @31, @30, @31, @30, @31, @31, @30, @31, @30, @31, nil];
     NSArray *monthInChinese = [[NSArray alloc]
@@ -106,10 +106,6 @@
 
 //输出XXXX年的日历
 - (void)printYear {
-    NSArray *dayInMonth = [[NSArray alloc]
-                           initWithObjects:@31, @28, @31, @30, @31, @30, @31, @31, @30, @31, @30, @31, nil];
-    NSArray *dayInMonthLeap = [[NSArray alloc]
-                               initWithObjects:@31, @29, @31, @30, @31, @30, @31, @31, @30, @31, @30, @31, nil];
     NSString *titleYear = [[NSString alloc] initWithFormat:@"%d", self.year];
     NSString *titleWeekList = [[NSString alloc] initWithFormat:@"%@",
                                @"Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa"];
@@ -134,102 +130,61 @@
         int day1, day2, day3;
         day1 = day2 = day3 = 1;
         //闰年
+        NSArray *dayInMonth;
         if ([self is_LeapYear]) {
-            while (day1 <= [[dayInMonthLeap objectAtIndex:i*3-3] intValue] ||
-                   day2 <= [[dayInMonthLeap objectAtIndex:i*3-2] intValue] ||
-                   day3 <= [[dayInMonthLeap objectAtIndex:i*3-1] intValue]) {
-                if (day1 > [[dayInMonthLeap objectAtIndex:i*3-3] intValue])
-                    printf("   ");
-                for (int j = 1;  j <= (weekday1-1) % 7; j++) {
-                    printf("   ");
-                }
-                for ( ; day1 <= [[dayInMonthLeap objectAtIndex:i*3-3] intValue]; weekday1++) {
-                    printf("%2d ", day1++);
-                    if (weekday1 % 7 == 0 || day1 > [[dayInMonthLeap objectAtIndex:i*3-3] intValue])
-                        break;
-                }
-                while (day1 > [[dayInMonthLeap objectAtIndex:i*3-3] intValue] && weekday1 % 7 != 0) {
-                    printf("   ");
-                    weekday1++;
-                }
-                weekday1++;
-                printf("  ");
-                if (day2 > [[dayInMonthLeap objectAtIndex:i*3-2] intValue])
-                    printf("   ");
-                for (int j = 1;  j <= (weekday2-1) % 7; j++) {
-                    printf("   ");
-                }
-                for ( ; day2 <= [[dayInMonthLeap objectAtIndex:i*3-2] intValue]; weekday2++) {
-                    printf("%2d ", day2++);
-                    if (weekday2 % 7 == 0 || day2 > [[dayInMonthLeap objectAtIndex:i*3-2] intValue])
-                        break;
-                }
-                while (day2 > [[dayInMonthLeap objectAtIndex:i*3-2] intValue] && weekday2 % 7 != 0) {
-                    printf("   ");
-                    weekday2++;
-                }
-                weekday2++;
-                printf("  ");
-                for (int j = 1; j <= (weekday3-1) % 7; j++) {
-                    printf("   ");
-                }
-                for ( ; day3 <= [[dayInMonthLeap objectAtIndex:i*3-1] intValue]; weekday3++) {
-                    printf("%2d ", day3++);
-                    if (weekday3 % 7 == 0 || day3 > [[dayInMonthLeap objectAtIndex:i*3-1] intValue])
-                        break;
-                }
-                weekday3++;
-                printf("\n");
-            }
+            dayInMonth = [[NSArray alloc]
+                                   initWithObjects:@31, @29, @31, @30, @31, @30, @31, @31, @30, @31, @30, @31, nil];
         }
-        //平年
         else {
-            while (day1 <= [[dayInMonth objectAtIndex:i*3-3] intValue] ||
-                   day2 <= [[dayInMonth objectAtIndex:i*3-2] intValue] ||
-                   day3 <= [[dayInMonth objectAtIndex:i*3-1] intValue]) {
-                if (day1 > [[dayInMonth objectAtIndex:i*3-3] intValue])
-                    printf("   ");
-                for (int j = 1;  j <= (weekday1-1) % 7; j++) {
-                    printf("   ");
-                }
-                for ( ; day1 <= [[dayInMonth objectAtIndex:i*3-3] intValue]; weekday1++) {
-                    printf("%2d ", day1++);
-                    if (weekday1 % 7 == 0 || day1 > [[dayInMonth objectAtIndex:i*3-3] intValue])
-                        break;
-                }
-                while (day1 > [[dayInMonth objectAtIndex:i*3-3] intValue] && weekday1 % 7 != 0) {
-                    printf("   ");
-                    weekday1++;
-                }
-                weekday1++;
-                printf("  ");
-                if (day2 > [[dayInMonth objectAtIndex:i*3-2] intValue])
-                    printf("   ");
-                for (int j = 1;  j <= (weekday2-1) % 7; j++) {
-                    printf("   ");
-                }
-                for ( ; day2 <= [[dayInMonth objectAtIndex:i*3-2] intValue]; weekday2++) {
-                    printf("%2d ", day2++);
-                    if (weekday2 % 7 == 0 || day2 > [[dayInMonth objectAtIndex:i*3-2] intValue])
-                        break;
-                }
-                while (day2 > [[dayInMonth objectAtIndex:i*3-2] intValue] && weekday2 % 7 != 0) {
-                    printf("   ");
-                    weekday2++;
-                }
-                weekday2++;
-                printf("  ");
-                for (int j = 1; j <= (weekday3-1) % 7; j++) {
-                    printf("   ");
-                }
-                for ( ; day3 <= [[dayInMonth objectAtIndex:i*3-1] intValue]; weekday3++) {
-                    printf("%2d ", day3++);
-                    if (weekday3 % 7 == 0 || day3 > [[dayInMonth objectAtIndex:i*3-1] intValue])
-                        break;
-                }
-                weekday3++;
-                printf("\n");
+            dayInMonth = [[NSArray alloc]
+                                       initWithObjects:@31, @28, @31, @30, @31, @30, @31, @31, @30, @31, @30, @31, nil];
+        }
+        
+        while (day1 <= [[dayInMonth objectAtIndex:i*3-3] intValue] ||
+            day2 <= [[dayInMonth objectAtIndex:i*3-2] intValue] ||
+            day3 <= [[dayInMonth objectAtIndex:i*3-1] intValue]) {
+            if (day1 > [[dayInMonth objectAtIndex:i*3-3] intValue])
+                printf("   ");
+            for (int j = 1;  j <= (weekday1-1) % 7; j++) {
+                printf("   ");
             }
+            for ( ; day1 <= [[dayInMonth objectAtIndex:i*3-3] intValue]; weekday1++) {
+                printf("%2d ", day1++);
+                if (weekday1 % 7 == 0 || day1 > [[dayInMonth objectAtIndex:i*3-3] intValue])
+                    break;
+            }
+            while (day1 > [[dayInMonth objectAtIndex:i*3-3] intValue] && weekday1 % 7 != 0) {
+                printf("   ");
+                weekday1++;
+            }
+            weekday1++;
+            printf("  ");
+            if (day2 > [[dayInMonth objectAtIndex:i*3-2] intValue])
+                printf("   ");
+            for (int j = 1;  j <= (weekday2-1) % 7; j++) {
+                printf("   ");
+            }
+            for ( ; day2 <= [[dayInMonth objectAtIndex:i*3-2] intValue]; weekday2++) {
+                printf("%2d ", day2++);
+                if (weekday2 % 7 == 0 || day2 > [[dayInMonth objectAtIndex:i*3-2] intValue])
+                    break;
+            }
+            while (day2 > [[dayInMonth objectAtIndex:i*3-2] intValue] && weekday2 % 7 != 0) {
+                printf("   ");
+                weekday2++;
+            }
+            weekday2++;
+            printf("  ");
+            for (int j = 1; j <= (weekday3-1) % 7; j++) {
+                printf("   ");
+            }
+            for ( ; day3 <= [[dayInMonth objectAtIndex:i*3-1] intValue]; weekday3++) {
+                printf("%2d ", day3++);
+                if (weekday3 % 7 == 0 || day3 > [[dayInMonth objectAtIndex:i*3-1] intValue])
+                    break;
+            }
+            weekday3++;
+            printf("\n");
         }
     }
 }
