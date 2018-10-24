@@ -5,12 +5,6 @@
 //  Created by shayue on 2018/10/11.
 //  Copyright © 2018 shayue. All rights reserved.
 //
-#ifdef DEBUG
-#define NSLog(FORMAT, ...) fprintf(stderr,"%s\n",[[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
-#else
-#define NSLog(...)
-#endif
-
 #import "Solution.h"
 
 @implementation Solution
@@ -74,9 +68,10 @@
 
 //输出一个月的日历接口
 - (void) printOneMonthInterface : (NSDate*) queryTime
+								: (BOOL) Iscolor
 {
-	NSArray *monthList = @[@"一月", @"二月", @"三月", @"四月", @"五月", @"六月", @"七月", @"八月",
-						   @"九月", @"十月", @"十一月", @"十二月"];
+	char monthList[12][20] = {"一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月",
+		"九月", "十月", "十一月", "十二月"};
 	
 	//1. dayInWeek : 查询的这一天是星期几, 范围[0, 6], 0-周日, 1-周一, 2-周二, 3-周三, 4-周四, 5-周五, 6-周六
 	NSUInteger dayInWeek = [self getWhichDay:queryTime];
@@ -95,21 +90,30 @@
 	NSUInteger firstDayOfCurMonth = [self getFirstdayOfMonth:dayInWeek :number];
 	
 	//6. 格式化输出
-	NSLog(@"         %@ %lu         ", monthList[month - 1], year);
-	[self printMonth:firstDayOfCurMonth :monthLength];
+	printf("         %s %lu         \n", monthList[month - 1], year);
+	[self printMonth:firstDayOfCurMonth :monthLength :Iscolor :number];
 }
 
 //格式化输出一个月的日历
 - (void) printMonth : (NSUInteger)firstDayOfCurMonth
 					: (NSUInteger)monthLength
+					: (BOOL)IsColor
+					: (NSUInteger)colorday
 {
-
-	NSLog(@"日\t一\t二\t三\t四\t五\t六");
+	printf("Sun Mon Yue Wed Thu Fri Sat\n");
 	for(int i = 0; i < firstDayOfCurMonth; i++)
 		printf("    ");
 	for(int i = 1; i <= monthLength; i++)
 	{
-		printf("%2d  ", i);
+		if(IsColor == true && i == colorday)
+		{
+			if(i > 9)
+				printf(" \033[1m\033[45;33m%d\033[0m ", i);
+			else
+				printf("  \033[1m\033[45;33m%d\033[0m ", i);
+		}
+		else
+			printf("%3d ", i);
 		if((i + firstDayOfCurMonth) % 7 == 0)
 			printf("\n");
 	}
@@ -137,7 +141,7 @@
 	
 	if(inputYear % 4 == 0)					//如果是闰年,2月总共天数为29
 		MonthLength[1] = 29;
-	NSLog(@"                                            %lu",  inputYear);
+	printf("                                          %lu\n\n",  inputYear);
 	for(int i = 0; i < 12; i += 3)
 	{
 		//打印头部
@@ -159,60 +163,60 @@
 		
 		//第一次
 		for(int j = 0; j < firstDay[0]; j++)
-			printf("\t");
+			printf("    ");
 		cnt1 = 6 - (int)firstDay[0] + 1;
 		for(j1 = 1; cnt1 > 0; j1++, cnt1--)
-			printf("%2d\t", j1);
-		printf("\t");
+			printf("%3d ", j1);
+		printf("  ");
 		
 		for(int j = 0; j < firstDay[1]; j++)
-			printf("\t");
+			printf("    ");
 		cnt2 = 6 - (int)firstDay[1] + 1;
 		for(j2 = 1; cnt2 > 0; j2++, cnt2--)
-			printf("%2d\t", j2);
-		printf("\t");
+			printf("%3d ", j2);
+		printf("  ");
 		
 		for(int j = 0; j < firstDay[2]; j++)
-			printf("\t");
+			printf("    ");
 		cnt3 = 6 - (int)firstDay[2] + 1;
 		for(j3 = 1; cnt3 > 0; j3++, cnt3--)
-			printf("%2d\t", j3);
+			printf("%3d ", j3);
 		printf("\n");
 		
 		//第二次
 		cnt1 = cnt2 = cnt3 = 7;
 		for(; cnt1 > 0; cnt1--, j1++)
-			printf("%2d\t", j1);
-		printf("\t");
+			printf("%3d ", j1);
+		printf("  ");
 		for(; cnt2 > 0; cnt2--, j2++)
-			printf("%2d\t", j2);
-		printf("\t");
+			printf("%3d ", j2);
+		printf("  ");
 		for(; cnt3 > 0; cnt3--, j3++)
-			printf("%2d\t", j3);
+			printf("%3d ", j3);
 		printf("\n");
 		
 		//第三次
 		cnt1 = cnt2 = cnt3 = 7;
 		for(; cnt1 > 0; cnt1--, j1++)
-			printf("%2d\t", j1);
-		printf("\t");
+			printf("%3d ", j1);
+		printf("  ");
 		for(; cnt2 > 0; cnt2--, j2++)
-			printf("%2d\t", j2);
-		printf("\t");
+			printf("%3d ", j2);
+		printf("  ");
 		for(; cnt3 > 0; cnt3--, j3++)
-			printf("%2d\t", j3);
+			printf("%3d ", j3);
 		printf("\n");
 		
 		//第4次
 		cnt1 = cnt2 = cnt3 = 7;
 		for(; cnt1 > 0; cnt1--, j1++)
-			printf("%2d\t", j1);
-		printf("\t");
+			printf("%3d ", j1);
+		printf("  ");
 		for(; cnt2 > 0; cnt2--, j2++)
-			printf("%2d\t", j2);
-		printf("\t");
+			printf("%3d ", j2);
+		printf("  ");
 		for(; cnt3 > 0; cnt3--, j3++)
-			printf("%2d\t", j3);
+			printf("%3d ", j3);
 		printf("\n");
 		
 		//第5次
@@ -237,36 +241,36 @@
 			cnt3  = 7;
 		}
 		for(; cnt1 > 0; cnt1--, j1++)
-			printf("%2d\t", j1);
+			printf("%3d ", j1);
 		//补空
 		if(remain1 == 0)
 		{
 			int fill1 = 5 * 7 - (int)(MonthLength[i] + firstDay[0]);
 			for(int j = 0; j < fill1; j++)
-				printf("  \t");
+				printf("    ");
 		}
-		printf("\t");
+		printf("  ");
 		
 		for(; cnt2 > 0; cnt2--, j2++)
-			printf("%2d\t", j2);
+			printf("%3d ", j2);
 		//补空
 		if(remain2 == 0)
 		{
 			int fill2 = 5 * 7 - (int)(MonthLength[i+1] + firstDay[1]);
 			for(int j = 0; j < fill2; j++)
-				printf("  \t");
+				printf("    ");
 			
 		}
-		printf("\t");
+		printf("  ");
 		
 		for(; cnt3 > 0; cnt3--, j3++)
-			printf("%2d\t", j3);
+			printf("%3d ", j3);
 		//补空
 		if (remain3 == 0)
 		{
 			int fill3 = 5 * 7 - (int)(MonthLength[i+2] + firstDay[2]);
 			for(int j = 0; j < fill3; j++)
-				printf("  \t");
+				printf("    ");
 		}
 		printf("\n");
 		
@@ -277,21 +281,21 @@
 			int fill2 = 7 - remain2;
 			int fill3 = 7 - remain3;
 			for(; remain1 > 0; remain1--, j1++)
-				printf("%2d\t", j1);
+				printf("%3d ", j1);
 			for(;fill1 > 0; fill1--)
-				printf("  \t");
-			printf("\t");
+				printf("    ");
+			printf("  ");
 			
 			for(; remain2 > 0; remain2--, j2++)
-				printf("%2d\t", j2);
+				printf("%3d ", j2);
 			for(;fill2 > 0; fill2--)
-				printf("  \t");
-			printf("\t");
+				printf("    ");
+			printf("  ");
 			
 			for(; remain3 > 0; remain3--, j3++)
-				printf("%2d\t", j3);
+				printf("%3d ", j3);
 			for(;fill3 > 0; fill3--)
-				printf("  \t");
+				printf("   ");
 			printf("\n");
 		}
 	}
@@ -299,15 +303,16 @@
 //打印3个月份
 - (void) printThreeMonth : (NSUInteger)i
 {
-	NSArray *monthList = @[@"一月", @"二月", @"三月", @"四月", @"五月", @"六月", @"七月", @"八月",
-						   @"九月", @"十月", @"十一月", @"十二月"];
 	if(i == 9)
 	{
-		NSLog(@"            十月 \t                       十一月\t\t                       十二月");
+		printf("            十月                         十一月                        十二月\n");
 	}
+	else if(i == 0)
+		printf("            一月                          二月                          三月\n");
+	else if(i == 3)
+		printf("            四月                          五月                          六月\n");
 	else
-		NSLog(@"            %@ \t                        %@\t\t                        %@",
-			  monthList[i], monthList[i + 1], monthList[i + 2]);
-	NSLog(@"日\t一\t二\t三\t四\t五\t六\t\t日\t一\t二\t三\t四\t五\t六\t\t日\t一\t二\t三\t四\t五\t六");
+		printf("            七月                          八月                          九月\n");
+	printf("Sun Mon Yue Wed Thu Fri Sat   Sun Mon Yue Wed Thu Fri Sat   Sun Mon Yue Wed Thu Fri Sat\n");
 }
 @end

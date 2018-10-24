@@ -24,10 +24,13 @@ NS_ASSUME_NONNULL_BEGIN
 //返回当前月的第一天是周几
 - (NSUInteger) getFirstdayOfMonth : (NSUInteger)dayInWeek : (NSUInteger)day;
 //输出一个月的日历接口
-- (void) printOneMonthInterface : (NSDate*) date;
+- (void) printOneMonthInterface : (NSDate*) date
+								: (BOOL) Iscolor;
 //格式化输出一个月的日历
 - (void) printMonth : (NSUInteger)firstDayOfCurMonth
-					: (NSUInteger)monthLength;
+					: (NSUInteger)monthLength
+					: (BOOL)IsColor
+					: (NSUInteger)colorday;
 //用设置好的时间返回NSDate
 - (NSDate*) getSetDate : (NSUInteger)theYear : (NSUInteger)theMonth;
 //打印全年的日历

@@ -5,12 +5,6 @@
 //  Created by shayue on 2018/10/11.
 //  Copyright © 2018 shayue. All rights reserved.
 //
-#ifdef DEBUG
-#define NSLog(FORMAT, ...) fprintf(stderr,"%s\n",[[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
-#else
-#define NSLog(...)
-#endif
-
 
 #import <Foundation/Foundation.h>
 #import "Solution.h"
@@ -27,7 +21,7 @@ bool isCorrectMonth(int *inputMonth, const char *p)			//判断输入的month是�
 			return false;
 		*inputMonth = (p[i] - '0') + (*inputMonth) * 10;
 	}
-	if(*inputMonth == 0 || *inputMonth >12)
+	if(*inputMonth == 0 || *inputMonth > 12)
 		return false;
 	else
 		return true;
@@ -61,14 +55,14 @@ int main(int argc, const char * argv[]) {
 		if(argc == 1)					//满足命令cal, 要求输出当前月的日历
 		{
 			queryTime = [NSDate date];
-			[solve printOneMonthInterface:queryTime];
+			[solve printOneMonthInterface:queryTime :true];
 		}
 		else if(argc == 2)				//满足命令cal year,要求输出整年的日历
 		{
 			int inputYear = 0;
 			if(!isCorrectYear(&inputYear, argv[1]))		//判断输入的参数是否合法
 			{
-				printf("year '%s' not in range 1..9999", argv[1]);
+				printf("year '%s' not in range 1..9999\n", argv[1]);
 			}
 			else			//格式化输出
 			{
@@ -90,7 +84,7 @@ int main(int argc, const char * argv[]) {
 					NSUInteger tmpYear = [solve getYear:tmp];
 					queryTime = [solve getSetDate:tmpYear
 									 :inputMonth ];
-					[solve printOneMonthInterface:queryTime];
+					[solve printOneMonthInterface:queryTime :false];
 				}
 			}
 			else if(isCorrectMonth(&inputMonth, argv[1]))
@@ -101,9 +95,9 @@ int main(int argc, const char * argv[]) {
 					inputMonth -= 1;
 					queryTime = [solve getSetDate:inputYear
 												 :inputMonth ];
-					[solve printOneMonthInterface:queryTime];
+					[solve printOneMonthInterface:queryTime :false];
 				}else
-					printf("year '%s' not in range 1..9999", argv[2]);
+					printf("year '%s' not in range 1..9999\n", argv[2]);
 			}
 			else
 			{
