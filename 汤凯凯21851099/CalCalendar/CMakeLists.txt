@@ -1,0 +1,17 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
+
+PROJECT(Calendar)
+
+SET(CMAKE_CXX_STANDARD 11)
+
+ADD_COMPILE_OPTIONS(-x objective-c++)
+
+SET(CMAKE_EXE_LINKER_FLAGS "-framework Foundation -ObjC")
+
+ADD_SUBDIRECTORY(CalendarUtils)
+
+INCLUDE_DIRECTORIES(CalendarUtils)
+
+ADD_EXECUTABLE(cal main.m)
+
+TARGET_LINK_LIBRARIES(cal calendar)
