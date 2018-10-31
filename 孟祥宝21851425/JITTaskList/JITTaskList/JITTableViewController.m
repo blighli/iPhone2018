@@ -28,7 +28,7 @@
     content.sound = [UNNotificationSound defaultSound];
     content.body = @"Thanks for using me 😘";
     UNTimeIntervalNotificationTrigger *trigger =
-    [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1
+    [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:0.01
                                                        repeats:NO];
     
     
@@ -37,6 +37,10 @@
                                       content:content
                                       trigger:trigger];
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    
+    
+    
+    // pushing request
     [center addNotificationRequest:request
              withCompletionHandler:^(NSError * _Nullable error) {
                  if (error != nil) {

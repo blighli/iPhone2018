@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "JITTableViewController.h"
 #import "JITTaskStore.h"
+#import <UserNotifications/UserNotifications.h>
 @interface AppDelegate ()
 
 @end
@@ -17,6 +18,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // request authorization
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    UNAuthorizationOptions options= (UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound);
+    [center requestAuthorizationWithOptions:options
+                          completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                              if (error != nil) {
+                                  NSLog(@"Something went wrong: %@",error);
+                              }
+                          }];
     // Override point for customization after application launch.
     self.window.rootViewController = [[JITTableViewController alloc] initWithStyle:UITableViewStylePlain];
     [self.window makeKeyAndVisible];
@@ -33,7 +44,11 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    [[JITTableViewController alloc] message];
+    static NSInteger *mesCount = 0;
+    if(mesCount == 0){
+        [[JITTableViewController alloc] message];
+        mesCount ++;
+    }
 }
 
 
