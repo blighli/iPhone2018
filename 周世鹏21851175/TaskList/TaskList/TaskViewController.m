@@ -31,6 +31,8 @@
     self.taskInput.returnKeyType = UIReturnKeyDone;
     self.taskInput.delegate = self;
     [self.addButton setEnabled:false];
+    self.taskInput.clearButtonMode = UITextFieldViewModeWhileEditing;
+    self.taskInput.placeholder = @"Input task here";
 }
 
 - (IBAction)taskInputEditingChanged:(id)sender {
