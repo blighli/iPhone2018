@@ -50,7 +50,7 @@ NSString *docPath(){
     [self.textIn setText:@""];
     [self.textIn resignFirstResponder];
 }
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"cellId";
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -63,7 +63,7 @@ NSString *docPath(){
     return cell;
 }
 
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [tasks count];
 }
 
