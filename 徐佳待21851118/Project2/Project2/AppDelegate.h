@@ -2,8 +2,8 @@
 //  AppDelegate.h
 //  Project2
 //
-//  Created by Zhenyu Chen on 2018/10/25.
-//  Copyright © 2018年 Zhenyu Chen. All rights reserved.
+//  Created by xujiadai on 2018/10/31.
+//  Copyright © 2018年 xujiadai. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
