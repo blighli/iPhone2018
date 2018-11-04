@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nI4-1T-32q">
+                                <rect key="frame" x="0.0" y="89" width="375" height="578"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="KtL-5T-EyL"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vjm-M6-K34"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type a task, tap insert" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IgO-vc-5E0">
+                                <rect key="frame" x="32" y="50" width="243" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="243" id="WjW-Le-LKT"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFiledDoneEditing:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="4CD-N0-Ltz"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyl-gc-HTX">
+                                <rect key="frame" x="313" y="50" width="46" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="bKO-Wq-1ag"/>
+                                    <constraint firstAttribute="height" constant="29" id="pOV-Wr-N5F"/>
+                                </constraints>
+                                <state key="normal" title="Insert"/>
+                                <connections>
+                                    <action selector="addTask:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c9L-Ew-XAL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nI4-1T-32q" firstAttribute="top" secondItem="IgO-vc-5E0" secondAttribute="bottom" constant="8" symbolic="YES" id="0lD-iH-MQx"/>
+                            <constraint firstItem="IgO-vc-5E0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="2Md-Gr-096"/>
+                            <constraint firstItem="eyl-gc-HTX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="EOC-v4-1Fc"/>
+                            <constraint firstItem="eyl-gc-HTX" firstAttribute="leading" secondItem="IgO-vc-5E0" secondAttribute="trailing" constant="38" id="TIB-na-Wax"/>
+                            <constraint firstItem="eyl-gc-HTX" firstAttribute="top" secondItem="IgO-vc-5E0" secondAttribute="top" id="XW3-4T-DuM"/>
+                            <constraint firstItem="nI4-1T-32q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bfr-Ld-Bit"/>
+                            <constraint firstItem="IgO-vc-5E0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="c1V-SR-pSU"/>
+                            <constraint firstItem="nI4-1T-32q" firstAttribute="top" secondItem="eyl-gc-HTX" secondAttribute="bottom" constant="10" id="hCb-CJ-8bH"/>
+                            <constraint firstItem="nI4-1T-32q" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="rfr-1v-8As"/>
+                            <constraint firstAttribute="trailing" secondItem="nI4-1T-32q" secondAttribute="trailing" id="sLV-tT-Zb4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="taskTableView" destination="nI4-1T-32q" id="iNf-hi-oc5"/>
+                        <outlet property="taskTextField" destination="IgO-vc-5E0" id="n4a-k5-dAE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>
