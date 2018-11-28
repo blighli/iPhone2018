@@ -14,3 +14,10 @@
 - 首页侧滑菜单
 - 日报详细信息页面
 - 查看知乎日报原文信息
+
+# 预览
+
+![image](https://github.com/DeIaube/iPhone2018/blob/master/21851134%E9%B9%BF%E7%9A%93/project03/screenshot/Screenshot1.png)
+![image](https://github.com/DeIaube/iPhone2018/blob/master/21851134%E9%B9%BF%E7%9A%93/project03/screenshot/Screenshot2.png)
+![image](https://github.com/DeIaube/iPhone2018/blob/master/21851134%E9%B9%BF%E7%9A%93/project03/screenshot/Screenshot3.png)
+![image](https://github.com/DeIaube/iPhone2018/blob/master/21851134%E9%B9%BF%E7%9A%93/project03/screenshot/Screenshot4.png)
