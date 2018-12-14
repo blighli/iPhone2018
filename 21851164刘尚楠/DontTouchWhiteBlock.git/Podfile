@@ -1,0 +1,10 @@
+platform :ios, '9.0'
+
+workspace 'DontTouchWhite'
+
+target 'DontTouchWhiteBlock.git' do
+  
+  pod 'JPush'
+  pod 'AVOSCloud'
+
+end
