@@ -29,10 +29,4 @@
     JieJiViewController *vc = [[JieJiViewController alloc] init];
     [self presentViewController:vc animated:NO completion:nil];
 }
-- (IBAction)showRank:(id)sender {
-    
-}
-- (IBAction)showAbout {
-}
-
 @end
