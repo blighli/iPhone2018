@@ -1,7 +1,8 @@
 # Marveliu’s homework
 
-
 - [Calendar: simple cal command implement](#calendar)
+- [TaskList: gui implement](#TaskList)
+- [DontTouchWhiteBlock: a game for Iphone workshop](#DontTouchWhiteBlock)
 
 ## Calendar
 
