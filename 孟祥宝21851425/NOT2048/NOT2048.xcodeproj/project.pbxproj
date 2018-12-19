@@ -1,0 +1,416 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		08F934C121CA7F6A00352284 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08F934C021CA7F6A00352284 /* Assets.xcassets */; };
+		08F934C421CA7F6A00352284 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08F934C221CA7F6A00352284 /* LaunchScreen.storyboard */; };
+		08F9350321CA805B00352284 /* PEBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F934FA21CA805B00352284 /* PEBlockView.m */; };
+		08F9350421CA805B00352284 /* PEGameboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F934FB21CA805B00352284 /* PEGameboardView.m */; };
+		08F9350521CA805B00352284 /* PEGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F934FE21CA805B00352284 /* PEGameViewController.m */; };
+		08F9350621CA805B00352284 /* PEControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F934FF21CA805B00352284 /* PEControlView.m */; };
+		08F9350721CA805B00352284 /* PEBlockModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F9350221CA805B00352284 /* PEBlockModel.m */; };
+		08F9350A21CA806A00352284 /* PEMoveOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F9350921CA806A00352284 /* PEMoveOrder.m */; };
+		08F9351D21CA807900352284 /* PEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F9350B21CA807800352284 /* PEViewController.m */; };
+		08F9351F21CA807900352284 /* PEBlockAppearanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F9350E21CA807800352284 /* PEBlockAppearanceProvider.m */; };
+		08F9352121CA807900352284 /* PEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F9351321CA807800352284 /* PEAppDelegate.m */; };
+		08F9352221CA807900352284 /* PEGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F9351421CA807800352284 /* PEGameModel.m */; };
+		08F9352321CA807900352284 /* PEScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F9351821CA807900352284 /* PEScoreView.m */; };
+		08F9352521CA807900352284 /* PEQueueAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F9351B21CA807900352284 /* PEQueueAction.m */; };
+		08F9353221CA866C00352284 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08F9353021CA866C00352284 /* Main.storyboard */; };
+		08F9353621CA86AB00352284 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F9353521CA86AB00352284 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		08F934B421CA7F6800352284 /* NOT2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOT2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		08F934C021CA7F6A00352284 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		08F934C321CA7F6A00352284 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		08F934C521CA7F6A00352284 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08F934F921CA805B00352284 /* PEControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEControlView.h; sourceTree = "<group>"; };
+		08F934FA21CA805B00352284 /* PEBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBlockView.m; sourceTree = "<group>"; };
+		08F934FB21CA805B00352284 /* PEGameboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEGameboardView.m; sourceTree = "<group>"; };
+		08F934FC21CA805B00352284 /* PEGameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEGameModel.h; sourceTree = "<group>"; };
+		08F934FD21CA805B00352284 /* PEGameboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEGameboardView.h; sourceTree = "<group>"; };
+		08F934FE21CA805B00352284 /* PEGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEGameViewController.m; sourceTree = "<group>"; };
+		08F934FF21CA805B00352284 /* PEControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEControlView.m; sourceTree = "<group>"; };
+		08F9350021CA805B00352284 /* PEBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBlockView.h; sourceTree = "<group>"; };
+		08F9350121CA805B00352284 /* PEBlockModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBlockModel.h; sourceTree = "<group>"; };
+		08F9350221CA805B00352284 /* PEBlockModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBlockModel.m; sourceTree = "<group>"; };
+		08F9350821CA806900352284 /* PEMoveOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEMoveOrder.h; sourceTree = "<group>"; };
+		08F9350921CA806A00352284 /* PEMoveOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEMoveOrder.m; sourceTree = "<group>"; };
+		08F9350B21CA807800352284 /* PEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEViewController.m; sourceTree = "<group>"; };
+		08F9350D21CA807800352284 /* PEGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEGameViewController.h; sourceTree = "<group>"; };
+		08F9350E21CA807800352284 /* PEBlockAppearanceProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBlockAppearanceProvider.m; sourceTree = "<group>"; };
+		08F9350F21CA807800352284 /* PEBlockAppearanceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBlockAppearanceProvider.h; sourceTree = "<group>"; };
+		08F9351121CA807800352284 /* PEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEViewController.h; sourceTree = "<group>"; };
+		08F9351321CA807800352284 /* PEAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEAppDelegate.m; sourceTree = "<group>"; };
+		08F9351421CA807800352284 /* PEGameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEGameModel.m; sourceTree = "<group>"; };
+		08F9351521CA807800352284 /* PEAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEAppDelegate.h; sourceTree = "<group>"; };
+		08F9351721CA807900352284 /* PEScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEScoreView.h; sourceTree = "<group>"; };
+		08F9351821CA807900352284 /* PEScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEScoreView.m; sourceTree = "<group>"; };
+		08F9351A21CA807900352284 /* PEQueueAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEQueueAction.h; sourceTree = "<group>"; };
+		08F9351B21CA807900352284 /* PEQueueAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEQueueAction.m; sourceTree = "<group>"; };
+		08F9353121CA866C00352284 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		08F9353521CA86AB00352284 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		08F934B121CA7F6800352284 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08F934AB21CA7F6800352284 = {
+			isa = PBXGroup;
+			children = (
+				08F934B621CA7F6800352284 /* NOT2048 */,
+				08F934B521CA7F6800352284 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		08F934B521CA7F6800352284 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				08F934B421CA7F6800352284 /* NOT2048.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		08F934B621CA7F6800352284 /* NOT2048 */ = {
+			isa = PBXGroup;
+			children = (
+				08F9353521CA86AB00352284 /* main.m */,
+				08F9351521CA807800352284 /* PEAppDelegate.h */,
+				08F9351321CA807800352284 /* PEAppDelegate.m */,
+				08F9351121CA807800352284 /* PEViewController.h */,
+				08F9350B21CA807800352284 /* PEViewController.m */,
+				08F9350D21CA807800352284 /* PEGameViewController.h */,
+				08F934FE21CA805B00352284 /* PEGameViewController.m */,
+				08F9350F21CA807800352284 /* PEBlockAppearanceProvider.h */,
+				08F9350E21CA807800352284 /* PEBlockAppearanceProvider.m */,
+				08F9352F21CA852100352284 /* Views */,
+				08F9352E21CA84E100352284 /* Models */,
+				08F934C021CA7F6A00352284 /* Assets.xcassets */,
+				08F9353021CA866C00352284 /* Main.storyboard */,
+				08F934C221CA7F6A00352284 /* LaunchScreen.storyboard */,
+				08F934C521CA7F6A00352284 /* Info.plist */,
+			);
+			path = NOT2048;
+			sourceTree = "<group>";
+		};
+		08F9352E21CA84E100352284 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				08F9350121CA805B00352284 /* PEBlockModel.h */,
+				08F9350221CA805B00352284 /* PEBlockModel.m */,
+				08F934FC21CA805B00352284 /* PEGameModel.h */,
+				08F9351421CA807800352284 /* PEGameModel.m */,
+				08F9350821CA806900352284 /* PEMoveOrder.h */,
+				08F9350921CA806A00352284 /* PEMoveOrder.m */,
+				08F9351A21CA807900352284 /* PEQueueAction.h */,
+				08F9351B21CA807900352284 /* PEQueueAction.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		08F9352F21CA852100352284 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				08F9350021CA805B00352284 /* PEBlockView.h */,
+				08F934FA21CA805B00352284 /* PEBlockView.m */,
+				08F934F921CA805B00352284 /* PEControlView.h */,
+				08F934FF21CA805B00352284 /* PEControlView.m */,
+				08F934FD21CA805B00352284 /* PEGameboardView.h */,
+				08F934FB21CA805B00352284 /* PEGameboardView.m */,
+				08F9351721CA807900352284 /* PEScoreView.h */,
+				08F9351821CA807900352284 /* PEScoreView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		08F934B321CA7F6800352284 /* NOT2048 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08F934CA21CA7F6A00352284 /* Build configuration list for PBXNativeTarget "NOT2048" */;
+			buildPhases = (
+				08F934B021CA7F6800352284 /* Sources */,
+				08F934B121CA7F6800352284 /* Frameworks */,
+				08F934B221CA7F6800352284 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NOT2048;
+			productName = NOT2048;
+			productReference = 08F934B421CA7F6800352284 /* NOT2048.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08F934AC21CA7F6800352284 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Peng&Ethan";
+				TargetAttributes = {
+					08F934B321CA7F6800352284 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 08F934AF21CA7F6800352284 /* Build configuration list for PBXProject "NOT2048" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 08F934AB21CA7F6800352284;
+			productRefGroup = 08F934B521CA7F6800352284 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				08F934B321CA7F6800352284 /* NOT2048 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		08F934B221CA7F6800352284 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08F9353221CA866C00352284 /* Main.storyboard in Resources */,
+				08F934C421CA7F6A00352284 /* LaunchScreen.storyboard in Resources */,
+				08F934C121CA7F6A00352284 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		08F934B021CA7F6800352284 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08F9353621CA86AB00352284 /* main.m in Sources */,
+				08F9350A21CA806A00352284 /* PEMoveOrder.m in Sources */,
+				08F9352521CA807900352284 /* PEQueueAction.m in Sources */,
+				08F9351D21CA807900352284 /* PEViewController.m in Sources */,
+				08F9350721CA805B00352284 /* PEBlockModel.m in Sources */,
+				08F9350421CA805B00352284 /* PEGameboardView.m in Sources */,
+				08F9350321CA805B00352284 /* PEBlockView.m in Sources */,
+				08F9351F21CA807900352284 /* PEBlockAppearanceProvider.m in Sources */,
+				08F9352121CA807900352284 /* PEAppDelegate.m in Sources */,
+				08F9352221CA807900352284 /* PEGameModel.m in Sources */,
+				08F9352321CA807900352284 /* PEScoreView.m in Sources */,
+				08F9350621CA805B00352284 /* PEControlView.m in Sources */,
+				08F9350521CA805B00352284 /* PEGameViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		08F934C221CA7F6A00352284 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08F934C321CA7F6A00352284 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		08F9353021CA866C00352284 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08F9353121CA866C00352284 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		08F934C821CA7F6A00352284 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		08F934C921CA7F6A00352284 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		08F934CB21CA7F6A00352284 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NOT2048/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = PE.NOT2048;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		08F934CC21CA7F6A00352284 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NOT2048/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = PE.NOT2048;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		08F934AF21CA7F6800352284 /* Build configuration list for PBXProject "NOT2048" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08F934C821CA7F6A00352284 /* Debug */,
+				08F934C921CA7F6A00352284 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08F934CA21CA7F6A00352284 /* Build configuration list for PBXNativeTarget "NOT2048" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08F934CB21CA7F6A00352284 /* Debug */,
+				08F934CC21CA7F6A00352284 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08F934AC21CA7F6800352284 /* Project object */;
+}
