@@ -1,0 +1,22 @@
+//
+//  PrefixHeader.pch
+//  Linker
+//
+//  Created by 王玉金 on 2018/12/1.
+//  Copyright © 2018年 yujin. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "ACMacros.h"
+
+#endif
+#endif /* PrefixHeader_pch */
