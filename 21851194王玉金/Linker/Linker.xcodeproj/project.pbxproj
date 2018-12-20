@@ -216,7 +216,6 @@
 		719429231E7C20F800958ABC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 719429221E7C20F800958ABC /* LoginViewController.m */; };
 		71942AF81E7C280B00958ABC /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 71942AF61E7C280B00958ABC /* libxml2.dylib */; };
 		71942AF91E7C280B00958ABC /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 71942AF71E7C280B00958ABC /* libresolv.dylib */; };
-		719BD1321E73CF93003350DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 719BD1311E73CF93003350DB /* ViewController.m */; };
 		719BD1381E73D780003350DB /* AppData.m in Sources */ = {isa = PBXBuildFile; fileRef = 719BD1371E73D780003350DB /* AppData.m */; };
 		71C68A4220652C1E001D59B0 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C68A4120652C1E001D59B0 /* MediaPlayer.framework */; };
 		FE3EF9111C4E162200581B56 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3EF9101C4E162200581B56 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -652,8 +651,6 @@
 		71942AF61E7C280B00958ABC /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = Linker/FrameWorks/libxml2.dylib; sourceTree = "<group>"; };
 		71942AF71E7C280B00958ABC /* libresolv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.dylib; path = Linker/FrameWorks/libresolv.dylib; sourceTree = "<group>"; };
 		71942AFE1E7C39ED00958ABC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		719BD1301E73CF93003350DB /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		719BD1311E73CF93003350DB /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		719BD1361E73D780003350DB /* AppData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppData.h; sourceTree = "<group>"; };
 		719BD1371E73D780003350DB /* AppData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppData.m; sourceTree = "<group>"; };
 		71C68A4120652C1E001D59B0 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -1879,8 +1876,6 @@
 				719429301E7C214E00958ABC /* Friends */,
 				7194292C1E7C212C00958ABC /* Tools */,
 				719429281E7C210F00958ABC /* Register */,
-				719BD1311E73CF93003350DB /* ViewController.m */,
-				719BD1301E73CF93003350DB /* ViewController.h */,
 				7186A97D1E7D086D002E6222 /* UUChat */,
 				FE852BEF1B9FE60B00B46AA2 /* AppDelegate.h */,
 				FE852BF01B9FE60B00B46AA2 /* AppDelegate.m */,
@@ -2051,7 +2046,6 @@
 			files = (
 				7186A9471E7D05DB002E6222 /* AFSecurityPolicy.m in Sources */,
 				7186A87A1E7D040D002E6222 /* XMPPSystemInputActivityMonitor.m in Sources */,
-				719BD1321E73CF93003350DB /* ViewController.m in Sources */,
 				7186A8551E7D040D002E6222 /* XMPPAnonymousAuthentication.m in Sources */,
 				7186A94E1E7D05DB002E6222 /* MJRefreshConst.m in Sources */,
 				7186A86D1E7D040D002E6222 /* XMPPOutgoingFileTransfer.m in Sources */,
