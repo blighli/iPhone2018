@@ -26,6 +26,7 @@ public:
     void display();
     void display(const std::string& text);
     void getPointList(Vec2 point[]);
+    float getDisgtance(Vec2 point);
     
     CREATE_FUNC(Shape);
     

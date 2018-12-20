@@ -8,7 +8,6 @@
 #include "Shape.hpp"
 
 bool Shape::init(){
-    init("Circle.png");
     return true;
 }
 
@@ -17,12 +16,14 @@ bool Shape::init(const std::string& filename){
     Sprite::initWithFile(filename);
     
     visibleSize = Director::getInstance()->getVisibleSize();
+    float shapescale = MIN(Director::getInstance()->getOpenGLView()->getFrameSize().width/visibleSize.width,Director::getInstance()->getOpenGLView()->getFrameSize().height/visibleSize.height);
     
-    counts = 10;
+    counts = CCRANDOM_0_1()*10+5;
     
     lb = Label::createWithSystemFont("", "TimesNewRoman", 12);
-    lb->setPosition(Vec2(12,12));
+    lb->setPosition(Vec2(12/shapescale,12/shapescale));
     lb->setTextColor(Color4B(0,0,0,255));
+    lb->setScale(1.0f/shapescale);
     addChild(lb);
     
     setAnchorPoint(Vec2(0.5f,0.5f));
@@ -58,4 +59,9 @@ void Shape::display(const std::string &text){
 
 void Shape::getPointList(Vec2 point[]){
     return ;
+}
+
+float Shape::getDisgtance(Vec2 point){
+    Vec2 local = getPosition();
+    return pow((local.x - point.x)*(local.x - point.x)+(local.y - point.y)*(local.y - point.y), 0.5);
 }

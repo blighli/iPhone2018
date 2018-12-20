@@ -32,47 +32,63 @@ bool MoveBalls::init(){
     
     LayerColor::initWithColor(Color4B(255,255,255,255));
     visibleSize = Director::getInstance()->getVisibleSize();
+    frameSize = Director::getInstance()->getOpenGLView()->getFrameSize();
+    glView = Director::getInstance()->getOpenGLView();
+    spriteScale = MIN(glView->getFrameSize().width/visibleSize.width,glView->getFrameSize().height/visibleSize.height);
     
     maxScore = loadMaxScore();
     
     //分数显示
-    scorelabel = Label::createWithSystemFont("", "TimesNewRoman", 24);
+    scorelabel = Label::createWithSystemFont("", "TimesNewRoman", 20);
+    maxScorelabel = Label::createWithSystemFont("", "TimesNewRoman", 20);
     addChild(scorelabel);
+    addChild(maxScorelabel);
     
     
     //设置重新开始按钮
     resbtn = cocos2d::ui::Button::create();
-    resbtn->loadTextureNormal("btn_true.png");
+    resbtn->loadTextureNormal("recycle.png");
     resbtn->setPressedActionEnabled(false);
-    resbtn->setScale9Enabled(true);
-    resbtn->setTitleText("重");     //设置按钮标题,还有其他函数可以设置颜色，字体大小
+    resbtn->setScale9Enabled(true);    //设置按钮大小，必须setScale9Enabled(true)，不然没有用
+//    resbtn->setScale(spriteScale*2);
     
     resbtn->setOpacity(100); //继承自node，设置node透明度，0完全透明
     
     resbtn->addTouchEventListener(CC_CALLBACK_2(MoveBalls::touchEvent,this));
-    resbtn->setContentSize(Size(40, 40));     //设置按钮大小，必须setScale9Enabled(true)，不然没有用
-    resbtn->setPosition(Vec2(20, 20));
+    resbtn->setPosition(Vec2(resbtn->getContentSize().width/2, resbtn->getContentSize().height/2));
     this->addChild(resbtn);
     
     //设置返回主界面按钮
     retbtn = cocos2d::ui::Button::create();
-    retbtn->loadTextureNormal("btn_true.png");
+    retbtn->loadTextureNormal("home.png");
     retbtn->setPressedActionEnabled(false);
     retbtn->setScale9Enabled(true);
-    retbtn->setTitleText("反");     //设置按钮标题,还有其他函数可以设置颜色，字体大小
+//    retbtn->setScale(spriteScale*);
     
     retbtn->setOpacity(100); //继承自node，设置node透明度，0完全透明
     
     retbtn->addTouchEventListener(CC_CALLBACK_2(MoveBalls::returnmain,this));
-    retbtn->setContentSize(Size(40, 40));     //设置按钮大小，必须setScale9Enabled(true)，不然没有用
-    retbtn->setPosition(Vec2(retbtn->getContentSize().width/2, visibleSize.height-retbtn->getContentSize().height/2));
+    retbtn->setPosition(Vec2(retbtn->getContentSize().width/2, visibleSize.height/2));
     this->addChild(retbtn);
     
+    
+    //设置音效按钮
+    musicbtn = cocos2d::ui::Button::create();
+    musicbtn->loadTextureNormal("music.png");
+    musicbtn->setPressedActionEnabled(false);
+    musicbtn->setScale9Enabled(true);
+//    musicbtn->setScale(spriteScale*2);
+    
+    musicbtn->setOpacity(100); //继承自node，设置node透明度，0完全透明
+    
+    musicbtn->addTouchEventListener(CC_CALLBACK_2(MoveBalls::musicEvent,this));
+    musicbtn->setPosition(Vec2(retbtn->getContentSize().width/2, visibleSize.height-musicbtn->getContentSize().height/2));
+    this->addChild(musicbtn);
     
     //上左边框
     auto edgeTopLeft = Sprite::create();
 //    edgeTopLeft->setTexture("timg.png");
-    auto TopLeftbody = PhysicsBody::createEdgeSegment(Vec2(0,0),Vec2(0,0.35f*visibleSize.height),PHYSICSBODY_MATERIAL_DEFAULT);
+    auto TopLeftbody = PhysicsBody::createEdgeSegment(Vec2(0,0),Vec2(0,0.3f*visibleSize.height),PHYSICSBODY_MATERIAL_DEFAULT);
 //    edgeTopLeft->setPosition(Vec2(0,-edgeTopLeft->getContentSize().height/2));
     edgeTopLeft->setPosition(Vec2(0.1f*visibleSize.width,0.15f*visibleSize.height));
     edgeTopLeft->setPhysicsBody(TopLeftbody);
@@ -80,7 +96,7 @@ bool MoveBalls::init(){
     
     //上右边框
     auto edgeTopRight = Sprite::create();
-    auto TopRightbody = PhysicsBody::createEdgeSegment(Vec2(0,0),Vec2(0,-0.35f*visibleSize.height));
+    auto TopRightbody = PhysicsBody::createEdgeSegment(Vec2(0,0),Vec2(0,-0.3f*visibleSize.height));
     edgeTopRight->setPosition(Vec2(0.1f*visibleSize.width,0.85f*visibleSize.height));
     edgeTopRight->setPhysicsBody(TopRightbody);
 //    edgeTopRight->setTexture("timg.png");
@@ -90,6 +106,7 @@ bool MoveBalls::init(){
     auto edgeLeft = Sprite::create();
     auto LeftBody = PhysicsBody::createEdgeSegment(Vec2(0,0),Vec2(0.7f*visibleSize.width,0));
     edgeLeft->setPosition(Vec2(0.1f*visibleSize.width,0.15f*visibleSize.height));
+    CCLOG("%f , %f\n" ,0.1f*visibleSize.width,0.15f*visibleSize.height);
     edgeLeft->setPhysicsBody(LeftBody);
     this->addChild(edgeLeft);
     
@@ -97,22 +114,23 @@ bool MoveBalls::init(){
     auto edgeRight = Sprite::create();
     auto RightBody = PhysicsBody::createEdgeSegment(Vec2(0,0),Vec2(0.7f*visibleSize.width,0));
     edgeRight->setPosition(Vec2(0.1f*visibleSize.width,0.85f*visibleSize.height));
+    CCLOG("%f , %f\n" ,0.1f*visibleSize.width,0.85f*visibleSize.height);
     edgeRight->setPhysicsBody(RightBody);
     this->addChild(edgeRight);
     
-    
     //底部
     auto edgeEnd = Sprite::create();
+    edgeEnd->setTexture("EndTri.png");
+    edgeEnd->setPosition(Vec2(0.875f*visibleSize.width,0.5f*visibleSize.height));
+    Size edgeSize = edgeEnd->getContentSize();
     Vec2 point[3];
-    point[0] = Vec2(0.3f*visibleSize.width,0.5f*visibleSize.height);
-    point[1] = Vec2(0.3f*visibleSize.width,-0.5f*visibleSize.height);
-    point[2] = Vec2(0,0);
+    point[0] = Vec2(0.5f*edgeSize.width,0.5f*edgeSize.height);
+    point[1] = Vec2(0.5f*edgeSize.width,-0.5f*edgeSize.height);
+    point[2] = Vec2(-0.5f*edgeSize.width,0);
     auto EndBody = PhysicsBody::createPolygon(point, 3, PhysicsMaterial(0.0f,1.0f,0.0f));
     EndBody->setDynamic(false);
-    edgeEnd->setPosition(Vec2(0.7f*visibleSize.width,visibleSize.height/2));
     edgeEnd->setPhysicsBody(EndBody);
-    edgeEnd->setTexture("EndTri.png");
-    edgeEnd->setColor(Color3B(110,110,110));
+    edgeEnd->setScale(spriteScale);
     this->addChild(edgeEnd);
     
     auto listner = EventListenerTouchOneByOne::create();
@@ -152,7 +170,8 @@ void MoveBalls::contact(){
         if (!bodyA || !bodyB){
             return ;
         }
-        SimpleAudioEngine::getInstance()->playEffect("contrat.caf");
+        if (isMusic)
+            SimpleAudioEngine::getInstance()->playEffect("contrat.caf");
         int tagA = bodyA->getTag();
         int tagB = bodyB->getTag();
         if (tagA==1 || tagA==2 ||tagA ==3){
@@ -181,6 +200,7 @@ void MoveBalls::contact(){
 bool MoveBalls::addBall(){
     
     Ball* ball = Ball::create();
+    ball->setScale(spriteScale);
     ball->setPosition(Vec2(0.2f*visibleSize.width/2,visibleSize.height/2));
     ball->setTag(0);
     
@@ -191,7 +211,7 @@ bool MoveBalls::addBall(){
 }
 
 void MoveBalls::BallMove(Ball* ball, float x, float y, float force){
-    auto body = PhysicsBody::createCircle(12,PhysicsMaterial(0.0f,1.0f,0.0f));
+    auto body = PhysicsBody::createCircle(ball->getContentSize().width/2,PhysicsMaterial(0.0f,1.0f,0.0f));
     body->setContactTestBitmask(0xFFFFFFFF);
     //    Vect force = Vect(1000.0f,1000.0f);
     //    body->applyImpulse(force);
@@ -206,11 +226,13 @@ void MoveBalls::BallMove(Ball* ball, float x, float y, float force){
 
 bool MoveBalls::addShape(int type, float x, float y){
     Shape *shape;
+    Size shapesize;
     if (type == 1){
         shape = circle::create();
         shape->init("Circle.png");
         shape->setTag(1);
-        PhysicsBody* body = PhysicsBody::createCircle(shape->getInfo(),PhysicsMaterial(0.0f,1.0f,0.0f));
+        shapesize = shape->getContentSize();
+        PhysicsBody* body = PhysicsBody::createCircle(shapesize.width/2,PhysicsMaterial(0.0f,1.0f,0.0f));
         body->setDynamic(false);
         body->setContactTestBitmask(0x1);
         shape->setPhysicsBody(body);
@@ -220,7 +242,8 @@ bool MoveBalls::addShape(int type, float x, float y){
         shape = rectangle::create();
         shape->init("Rectangle.png");
         shape->setTag(2);
-        float l = shape->getInfo();
+        shapesize = shape->getContentSize();
+        float l = shapesize.width;
         Vec2 point[4];
         point[0] = Vec2(-l/2,l/2);
         point[1] = Vec2(l/2,l/2);
@@ -232,12 +255,13 @@ bool MoveBalls::addShape(int type, float x, float y){
         shape->setPhysicsBody(body);
         shape->setPosition(Vec2(x, y));
         shape->display();
-    }else if (type>=3){
+    }else if (type==3){
         shape = triangle::create();
         shape->init("triangle.png");
         shape->setTag(3);
+        shapesize = shape->getContentSize();
         Vec2 point[3];
-        float l = shape->getInfo();
+        float l = shapesize.width;
         float lro = l / pow(3, 0.5);
         point[0] = Vec2(0,lro);
         point[1] = Vec2(l/2,-lro/2);
@@ -248,7 +272,13 @@ bool MoveBalls::addShape(int type, float x, float y){
         shape->setPhysicsBody(body);
         shape->setPosition(Vec2(x, y));
         shape->display();
+    }else if (type>=4){
+        shape = Prop::create();
+        shape->init("AddNumber.png");
+        shape->setTag(4);
+        shape->setPosition(Vec2(x, y));
     }
+    shape->setScale(spriteScale);
     addChild(shape);
     shapes.pushBack(shape);
     return true;
@@ -268,14 +298,21 @@ void MoveBalls::MyUpdate(float dt){
     }
     Vector<Ball*> deletedballs;
     for (auto it=balls.begin(); it!=balls.end(); it++){
-        if ((*it)->getPositionY()<0 || (*it)->getPositionY()>visibleSize.height || (*it)->getPositionX()<0.1f*visibleSize.width || (*it)->getPositionX()>visibleSize.width){
-            (*it)->removeFromParentAndCleanup(true);
-            deletedballs.pushBack(*it);
+        for (auto jt=shapes.begin(); jt!=shapes.end(); jt++){
+            if ((*jt)->getTag()==4 && (*jt)->getDisgtance((*it)->getPosition()) < (*jt)->getInfo()){
+                ballNum++;
+                deletedshapes.pushBack(*jt);
+                (*jt)->removeFromParentAndCleanup(true);
+            }
+        }
+        if (isContart == true){
+            if ((*it)->getPositionY()<0 || (*it)->getPositionY()>visibleSize.height || (*it)->getPositionX()<0.1f*visibleSize.width || (*it)->getPositionX()>visibleSize.width){
+                (*it)->removeFromParentAndCleanup(true);
+                deletedballs.pushBack(*it);
+            }
         }
     }
-//    if (ballNum < score/20){
-//        ballNum = score;
-//    }
+    
     for (auto it=deletedballs.begin(); it!=deletedballs.end(); it++){
         balls.eraseObject(*it);
     }
@@ -293,6 +330,7 @@ void MoveBalls::MyUpdate(float dt){
 
 void MoveBalls::showScore(){
     scorelabel->setString("分数:" + std::to_string(score));
+    maxScorelabel->setString("最高分数:" + std::to_string(maxScore));
 }
 
 void MoveBalls::restart(){
@@ -313,15 +351,16 @@ void MoveBalls::restart(){
     isRise = true;
     
     //分数显示初始化
-    scorelabel->setPosition(Vec2(240,300));
+    scorelabel->setPosition(Vec2(240,290));
     scorelabel->setTextColor(Color4B(0,0,0,255));
+    maxScorelabel->setPosition(Vec2(240,310));
+    maxScorelabel->setTextColor(Color4B(0,0,0,255));
     
     showScore();
 }
 
 void MoveBalls::ShapeMove(){
     
-    this->addShape(floor(CCRANDOM_0_1()*3)+1, 0.65*visibleSize.width, visibleSize.height*(CCRANDOM_0_1()*0.6+0.2));
     
     for (auto it=shapes.begin(); it!=shapes.end(); it++){
         (*it)->rise();
@@ -330,9 +369,16 @@ void MoveBalls::ShapeMove(){
             break;
         }
     }
+    
+    int number = CCRANDOM_0_1()*2+1;
+    for (int i=0; i<number; i++){
+        this->addShape(floor(CCRANDOM_0_1()*4)+1, 0.65*visibleSize.width, visibleSize.height*(CCRANDOM_0_1()*0.2+0.2*i+0.2));
+    }
+    
     for (int i=0; i<ballNum; i++){
         this->addBall();
     }
+    
 }
 
 void MoveBalls::gameover(){
@@ -353,8 +399,36 @@ void MoveBalls::touchEvent(Ref *pSender, cocos2d::ui::Widget::TouchEventType typ
 
 void MoveBalls::returnmain(Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-    Director::getInstance()->popScene();
+    switch (type) {
+        case cocos2d::ui::Widget::TouchEventType::ENDED:
+            Director::getInstance()->popScene();
+            break;
+        default:
+            break;
+    }
 }
+
+
+void MoveBalls::musicEvent(Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
+{
+    switch (type) {
+        case cocos2d::ui::Widget::TouchEventType::ENDED:
+            if (isMusic){
+                isMusic = false;
+//                musicbtn->loadTextures("music-close.png",0);
+                SimpleAudioEngine::getInstance()->setEffectsVolume(0);
+            }
+            else {
+                isMusic = true;
+//                musicbtn->loadTextures("music.png",0);
+                SimpleAudioEngine::getInstance()->setEffectsVolume(1);
+            }
+            break;
+        default:
+            break;
+    }
+}
+
 
 int MoveBalls::loadMaxScore(){
     
@@ -465,7 +539,8 @@ void MoveBalls::delayCall(float dt){
         this->isContart = true;
     }
     else{
-        this->BallMove(balls.at(click), TouchPos.x, TouchPos.y, 5);
+        if (click < balls.size())
+            this->BallMove(balls.at(click), TouchPos.x, TouchPos.y, 5);
         click++;
     }
 }

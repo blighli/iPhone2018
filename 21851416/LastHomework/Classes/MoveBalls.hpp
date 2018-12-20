@@ -13,6 +13,7 @@
 #include "cocos2d.h"
 #include "cocos-ext.h"
 #include "Ball.hpp"
+#include "Prop.hpp"
 #include "Shape.hpp"
 #include "circle.hpp"
 #include "triangle.hpp"
@@ -41,17 +42,23 @@ private:
     Vector<Shape*> deletedshapes;
     PhysicsWorld* m_world;
     Size visibleSize;
+    Size frameSize;
+    GLView* glView;
     Label* scorelabel;
+    Label* maxScorelabel;
     cocos2d::ui::Button* resbtn;
     cocos2d::ui::Button* retbtn;
+    cocos2d::ui::Button* musicbtn;
     Vec2 TouchPos;
-    int click;
     
+    int click;
     bool isContart;
     bool isRise;
+    bool isMusic;
     int score;
     int ballNum;
     int maxScore;
+    float spriteScale;
     
     bool addBall();
     void BallMove(Ball* ball, float x, float y, float force);
@@ -64,6 +71,7 @@ private:
     void gameover();
     void touchEvent(Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
     void returnmain(Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
+    void musicEvent(Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
     int loadMaxScore();
     void saveMaxScore();
     void delayCall(float dt);

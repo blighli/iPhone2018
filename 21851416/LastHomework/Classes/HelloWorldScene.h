@@ -26,7 +26,6 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
-#include "PopAlertDialog.hpp"
 #include "cocos-ext.h"
 #include "MoveBalls.hpp"
 

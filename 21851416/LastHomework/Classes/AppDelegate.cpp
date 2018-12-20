@@ -85,6 +85,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     if(!glview) {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
         glview = GLViewImpl::createWithRect("MoveBall", cocos2d::Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
+//        glview = GLViewImpl::createWithRect("MoveBall", cocos2d::Rect(0, 0, 1218, 562));
+
 #else
         glview = GLViewImpl::create("MoveBall");
 #endif
@@ -98,8 +100,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0f / 60);
 
     // Set the design resolution
-    glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
     auto frameSize = glview->getFrameSize();
+    glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::SHOW_ALL);
+    Size cur_design_size = glview->getDesignResolutionSize();
+    CCLOG("%f x %f\n",frameSize.width,frameSize.height);
     // if the frame's height is larger than the height of medium size.
     if (frameSize.height > mediumResolutionSize.height)
     {        
