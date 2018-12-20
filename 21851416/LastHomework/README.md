@@ -1,3 +1,7 @@
 一个使用cocos2dx制作的模仿弹一弹的小游戏
+
 CLass文件中为主要文件
+
 Resources中为资源文件
+
+cocos2d中为库文件
