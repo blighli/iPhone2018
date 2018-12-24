@@ -1,0 +1,42 @@
+    //上左边框
+    auto edgeTopLeft = Sprite::create();
+    auto TopLeftbody = PhysicsBody::createEdgeSegment(Vec2(-0.4f*visibleSize.width,-0.35f*visibleSize.height),Vec2(-0.4f*visibleSize.width,0),PHYSICSBODY_MATERIAL_DEFAULT);
+    edgeTopLeft->setPosition(Vec2(visibleSize.width/2,visibleSize.height/2));
+    edgeTopLeft->setPhysicsBody(TopLeftbody);
+    edgeTopLeft->setTexture("timg.png");
+    this->addChild(edgeTopLeft);
+    
+    //上右边框
+    auto edgeTopRight = Sprite::create();
+    auto TopRightbody = PhysicsBody::createEdgeSegment(Vec2(-0.4f*visibleSize.width,0),Vec2(-0.4f*visibleSize.width,0.35f*visibleSize.height));
+    edgeTopRight->setPosition(Vec2(visibleSize.width/2,visibleSize.height/2));
+    edgeTopRight->setPhysicsBody(TopRightbody);
+    edgeTopRight->setTexture("timg.png");
+    this->addChild(edgeTopRight);
+    
+    //左边框
+    auto edgeLeft = Sprite::create();
+    auto LeftBody = PhysicsBody::createEdgeSegment(Vec2(-0.4f*visibleSize.width,-0.35f*visibleSize.height),Vec2(0.3f*visibleSize.width,-0.35f*visibleSize.height));
+    edgeLeft->setPosition(Vec2(visibleSize.width/2,visibleSize.height/2));
+    edgeLeft->setPhysicsBody(LeftBody);
+    this->addChild(edgeLeft);
+    
+    //右边框
+    auto edgeRight = Sprite::create();
+    auto RightBody = PhysicsBody::createEdgeSegment(Vec2(-0.4f*visibleSize.width,0.35f*visibleSize.height),Vec2(0.3f*visibleSize.width,0.35f*visibleSize.height));
+    edgeRight->setPosition(Vec2(visibleSize.width/2,visibleSize.height/2));
+    edgeRight->setPhysicsBody(RightBody);
+    this->addChild(edgeRight);
+    
+    
+    //底部
+    auto edgeEnd = Sprite::create();
+    Vec2 point[3];
+    point[0] = Vec2(0.7f*visibleSize.width,0.7f*visibleSize.height);
+    point[1] = Vec2(0.7f*visibleSize.width,-0.7f*visibleSize.height);
+    point[2] = Vec2(0.2f*visibleSize.width,0);
+    auto EndBody = PhysicsBody::createPolygon(point, 3, PhysicsMaterial(0.0f,1.0f,0.0f));
+    EndBody->setDynamic(false);
+    edgeEnd->setPosition(Vec2(visibleSize.width/2,visibleSize.height/2));
+    edgeEnd->setPhysicsBody(EndBody);
+    this->addChild(edgeEnd);
