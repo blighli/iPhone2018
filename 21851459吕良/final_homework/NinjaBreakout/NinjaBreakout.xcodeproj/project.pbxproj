@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A71A78021C1256F00D50993 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71A77F21C1256F00D50993 /* AppDelegate.m */; };
+		1A71A78221C1256F00D50993 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1A71A78121C1256F00D50993 /* GameScene.sks */; };
+		1A71A78421C1256F00D50993 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1A71A78321C1256F00D50993 /* Actions.sks */; };
+		1A71A78721C1256F00D50993 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71A78621C1256F00D50993 /* GameScene.m */; };
+		1A71A78A21C1256F00D50993 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71A78921C1256F00D50993 /* GameViewController.m */; };
+		1A71A78D21C1256F00D50993 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A71A78B21C1256F00D50993 /* Main.storyboard */; };
+		1A71A78F21C1257000D50993 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A71A78E21C1257000D50993 /* Assets.xcassets */; };
+		1A71A79221C1257000D50993 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A71A79021C1257000D50993 /* LaunchScreen.storyboard */; };
+		1A71A79521C1257000D50993 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71A79421C1257000D50993 /* main.m */; };
+		1A71A79F21C1257000D50993 /* NinjaBreakoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71A79E21C1257000D50993 /* NinjaBreakoutTests.m */; };
+		1A71A7AA21C1257000D50993 /* NinjaBreakoutUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71A7A921C1257000D50993 /* NinjaBreakoutUITests.m */; };
+		1A71A7B921C1257000D50993 /* StartScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71A7B821C1257000D50993 /* StartScene.m */; };
+		1A71A7BC21C1C09000D50993 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71A7BB21C1C09000D50993 /* GameOverScene.m */; };
+		1A71A7BE21CA642100D50993 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1A71A7BD21CA642100D50993 /* sprites.atlas */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A71A79B21C1257000D50993 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A71A77321C1256F00D50993 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A71A77A21C1256F00D50993;
+			remoteInfo = NinjaBreakout;
+		};
+		1A71A7A621C1257000D50993 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A71A77321C1256F00D50993 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A71A77A21C1256F00D50993;
+			remoteInfo = NinjaBreakout;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1A71A77B21C1256F00D50993 /* NinjaBreakout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NinjaBreakout.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A71A77E21C1256F00D50993 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1A71A77F21C1256F00D50993 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1A71A78121C1256F00D50993 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		1A71A78321C1256F00D50993 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		1A71A78521C1256F00D50993 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		1A71A78621C1256F00D50993 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		1A71A78821C1256F00D50993 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		1A71A78921C1256F00D50993 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		1A71A78C21C1256F00D50993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1A71A78E21C1257000D50993 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A71A79121C1257000D50993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1A71A79321C1257000D50993 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A71A79421C1257000D50993 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1A71A79A21C1257000D50993 /* NinjaBreakoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NinjaBreakoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A71A79E21C1257000D50993 /* NinjaBreakoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NinjaBreakoutTests.m; sourceTree = "<group>"; };
+		1A71A7A021C1257000D50993 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A71A7A521C1257000D50993 /* NinjaBreakoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NinjaBreakoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A71A7A921C1257000D50993 /* NinjaBreakoutUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NinjaBreakoutUITests.m; sourceTree = "<group>"; };
+		1A71A7AB21C1257000D50993 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A71A7B721C1257000D50993 /* StartScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
+		1A71A7B821C1257000D50993 /* StartScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartScene.m; sourceTree = "<group>"; };
+		1A71A7BA21C1C09000D50993 /* GameOverScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		1A71A7BB21C1C09000D50993 /* GameOverScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
+		1A71A7BD21CA642100D50993 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A71A77821C1256F00D50993 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A71A79721C1257000D50993 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A71A7A221C1257000D50993 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A71A77221C1256F00D50993 = {
+			isa = PBXGroup;
+			children = (
+				1A71A77D21C1256F00D50993 /* NinjaBreakout */,
+				1A71A79D21C1257000D50993 /* NinjaBreakoutTests */,
+				1A71A7A821C1257000D50993 /* NinjaBreakoutUITests */,
+				1A71A77C21C1256F00D50993 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1A71A77C21C1256F00D50993 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A71A77B21C1256F00D50993 /* NinjaBreakout.app */,
+				1A71A79A21C1257000D50993 /* NinjaBreakoutTests.xctest */,
+				1A71A7A521C1257000D50993 /* NinjaBreakoutUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1A71A77D21C1256F00D50993 /* NinjaBreakout */ = {
+			isa = PBXGroup;
+			children = (
+				1A71A7BD21CA642100D50993 /* sprites.atlas */,
+				1A71A77E21C1256F00D50993 /* AppDelegate.h */,
+				1A71A77F21C1256F00D50993 /* AppDelegate.m */,
+				1A71A78121C1256F00D50993 /* GameScene.sks */,
+				1A71A78321C1256F00D50993 /* Actions.sks */,
+				1A71A78521C1256F00D50993 /* GameScene.h */,
+				1A71A78621C1256F00D50993 /* GameScene.m */,
+				1A71A78821C1256F00D50993 /* GameViewController.h */,
+				1A71A78921C1256F00D50993 /* GameViewController.m */,
+				1A71A78B21C1256F00D50993 /* Main.storyboard */,
+				1A71A78E21C1257000D50993 /* Assets.xcassets */,
+				1A71A79021C1257000D50993 /* LaunchScreen.storyboard */,
+				1A71A79321C1257000D50993 /* Info.plist */,
+				1A71A79421C1257000D50993 /* main.m */,
+				1A71A7B721C1257000D50993 /* StartScene.h */,
+				1A71A7B821C1257000D50993 /* StartScene.m */,
+				1A71A7BA21C1C09000D50993 /* GameOverScene.h */,
+				1A71A7BB21C1C09000D50993 /* GameOverScene.m */,
+			);
+			path = NinjaBreakout;
+			sourceTree = "<group>";
+		};
+		1A71A79D21C1257000D50993 /* NinjaBreakoutTests */ = {
+			isa = PBXGroup;
+			children = (
+				1A71A79E21C1257000D50993 /* NinjaBreakoutTests.m */,
+				1A71A7A021C1257000D50993 /* Info.plist */,
+			);
+			path = NinjaBreakoutTests;
+			sourceTree = "<group>";
+		};
+		1A71A7A821C1257000D50993 /* NinjaBreakoutUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1A71A7A921C1257000D50993 /* NinjaBreakoutUITests.m */,
+				1A71A7AB21C1257000D50993 /* Info.plist */,
+			);
+			path = NinjaBreakoutUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1A71A77A21C1256F00D50993 /* NinjaBreakout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A71A7AE21C1257000D50993 /* Build configuration list for PBXNativeTarget "NinjaBreakout" */;
+			buildPhases = (
+				1A71A77721C1256F00D50993 /* Sources */,
+				1A71A77821C1256F00D50993 /* Frameworks */,
+				1A71A77921C1256F00D50993 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NinjaBreakout;
+			productName = NinjaBreakout;
+			productReference = 1A71A77B21C1256F00D50993 /* NinjaBreakout.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1A71A79921C1257000D50993 /* NinjaBreakoutTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A71A7B121C1257000D50993 /* Build configuration list for PBXNativeTarget "NinjaBreakoutTests" */;
+			buildPhases = (
+				1A71A79621C1257000D50993 /* Sources */,
+				1A71A79721C1257000D50993 /* Frameworks */,
+				1A71A79821C1257000D50993 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A71A79C21C1257000D50993 /* PBXTargetDependency */,
+			);
+			name = NinjaBreakoutTests;
+			productName = NinjaBreakoutTests;
+			productReference = 1A71A79A21C1257000D50993 /* NinjaBreakoutTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1A71A7A421C1257000D50993 /* NinjaBreakoutUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A71A7B421C1257000D50993 /* Build configuration list for PBXNativeTarget "NinjaBreakoutUITests" */;
+			buildPhases = (
+				1A71A7A121C1257000D50993 /* Sources */,
+				1A71A7A221C1257000D50993 /* Frameworks */,
+				1A71A7A321C1257000D50993 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A71A7A721C1257000D50993 /* PBXTargetDependency */,
+			);
+			name = NinjaBreakoutUITests;
+			productName = NinjaBreakoutUITests;
+			productReference = 1A71A7A521C1257000D50993 /* NinjaBreakoutUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A71A77321C1256F00D50993 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = lvliang;
+				TargetAttributes = {
+					1A71A77A21C1256F00D50993 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					1A71A79921C1257000D50993 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 1A71A77A21C1256F00D50993;
+					};
+					1A71A7A421C1257000D50993 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 1A71A77A21C1256F00D50993;
+					};
+				};
+			};
+			buildConfigurationList = 1A71A77621C1256F00D50993 /* Build configuration list for PBXProject "NinjaBreakout" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1A71A77221C1256F00D50993;
+			productRefGroup = 1A71A77C21C1256F00D50993 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A71A77A21C1256F00D50993 /* NinjaBreakout */,
+				1A71A79921C1257000D50993 /* NinjaBreakoutTests */,
+				1A71A7A421C1257000D50993 /* NinjaBreakoutUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A71A77921C1256F00D50993 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A71A78D21C1256F00D50993 /* Main.storyboard in Resources */,
+				1A71A78221C1256F00D50993 /* GameScene.sks in Resources */,
+				1A71A78F21C1257000D50993 /* Assets.xcassets in Resources */,
+				1A71A79221C1257000D50993 /* LaunchScreen.storyboard in Resources */,
+				1A71A7BE21CA642100D50993 /* sprites.atlas in Resources */,
+				1A71A78421C1256F00D50993 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A71A79821C1257000D50993 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A71A7A321C1257000D50993 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A71A77721C1256F00D50993 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A71A7B921C1257000D50993 /* StartScene.m in Sources */,
+				1A71A78721C1256F00D50993 /* GameScene.m in Sources */,
+				1A71A78A21C1256F00D50993 /* GameViewController.m in Sources */,
+				1A71A7BC21C1C09000D50993 /* GameOverScene.m in Sources */,
+				1A71A79521C1257000D50993 /* main.m in Sources */,
+				1A71A78021C1256F00D50993 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A71A79621C1257000D50993 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A71A79F21C1257000D50993 /* NinjaBreakoutTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A71A7A121C1257000D50993 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A71A7AA21C1257000D50993 /* NinjaBreakoutUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1A71A79C21C1257000D50993 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A71A77A21C1256F00D50993 /* NinjaBreakout */;
+			targetProxy = 1A71A79B21C1257000D50993 /* PBXContainerItemProxy */;
+		};
+		1A71A7A721C1257000D50993 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A71A77A21C1256F00D50993 /* NinjaBreakout */;
+			targetProxy = 1A71A7A621C1257000D50993 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1A71A78B21C1256F00D50993 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A71A78C21C1256F00D50993 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1A71A79021C1257000D50993 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A71A79121C1257000D50993 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1A71A7AC21C1257000D50993 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1A71A7AD21C1257000D50993 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1A71A7AF21C1257000D50993 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NinjaBreakout/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ll.NinjaBreakout;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1A71A7B021C1257000D50993 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NinjaBreakout/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ll.NinjaBreakout;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1A71A7B221C1257000D50993 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NinjaBreakoutTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ll.NinjaBreakoutTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NinjaBreakout.app/NinjaBreakout";
+			};
+			name = Debug;
+		};
+		1A71A7B321C1257000D50993 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NinjaBreakoutTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ll.NinjaBreakoutTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NinjaBreakout.app/NinjaBreakout";
+			};
+			name = Release;
+		};
+		1A71A7B521C1257000D50993 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NinjaBreakoutUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ll.NinjaBreakoutUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NinjaBreakout;
+			};
+			name = Debug;
+		};
+		1A71A7B621C1257000D50993 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NinjaBreakoutUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ll.NinjaBreakoutUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NinjaBreakout;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A71A77621C1256F00D50993 /* Build configuration list for PBXProject "NinjaBreakout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A71A7AC21C1257000D50993 /* Debug */,
+				1A71A7AD21C1257000D50993 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A71A7AE21C1257000D50993 /* Build configuration list for PBXNativeTarget "NinjaBreakout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A71A7AF21C1257000D50993 /* Debug */,
+				1A71A7B021C1257000D50993 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A71A7B121C1257000D50993 /* Build configuration list for PBXNativeTarget "NinjaBreakoutTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A71A7B221C1257000D50993 /* Debug */,
+				1A71A7B321C1257000D50993 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A71A7B421C1257000D50993 /* Build configuration list for PBXNativeTarget "NinjaBreakoutUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A71A7B521C1257000D50993 /* Debug */,
+				1A71A7B621C1257000D50993 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1A71A77321C1256F00D50993 /* Project object */;
+}
