@@ -1,0 +1,500 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E111703D0405DCD235D1D3F /* libPods-MovieBank.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 744F45DF9B83A06A4CE49EC6 /* libPods-MovieBank.a */; };
+		3B0E624421C8EB55002DED0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0E624321C8EB55002DED0A /* AppDelegate.m */; };
+		3B0E624721C8EB55002DED0A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0E624621C8EB55002DED0A /* ViewController.m */; };
+		3B0E624A21C8EB55002DED0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0E624821C8EB55002DED0A /* Main.storyboard */; };
+		3B0E624C21C8EB56002DED0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B0E624B21C8EB56002DED0A /* Assets.xcassets */; };
+		3B0E624F21C8EB56002DED0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0E624D21C8EB56002DED0A /* LaunchScreen.storyboard */; };
+		3B0E625221C8EB56002DED0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0E625121C8EB56002DED0A /* main.m */; };
+		3B0E626021C8EE54002DED0A /* QXBankTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0E625F21C8EE54002DED0A /* QXBankTableViewController.m */; };
+		3B0E626321C8EF5F002DED0A /* QXBank.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0E626221C8EF5F002DED0A /* QXBank.m */; };
+		3B0E626621C8F0BF002DED0A /* QXFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0E626521C8F0BF002DED0A /* QXFolder.m */; };
+		3B0E626921C8F176002DED0A /* QXMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0E626821C8F176002DED0A /* QXMovie.m */; };
+		3B0E626C21C8FB0F002DED0A /* QXMoviePosterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0E626B21C8FB0F002DED0A /* QXMoviePosterTableViewCell.m */; };
+		3B0E626F21C8FB78002DED0A /* QXMovieDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0E626E21C8FB78002DED0A /* QXMovieDetailTableViewCell.m */; };
+		3B0E627221C8FC22002DED0A /* QXFolderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0E627121C8FC22002DED0A /* QXFolderTableViewController.m */; };
+		3B0E627521C8FC74002DED0A /* QXMovieTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0E627421C8FC74002DED0A /* QXMovieTableViewController.m */; };
+		3B0E627821C8FCF5002DED0A /* QXSeekTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0E627721C8FCF5002DED0A /* QXSeekTableViewController.m */; };
+		3B0E627B21C8FD65002DED0A /* QXActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0E627A21C8FD65002DED0A /* QXActionViewController.m */; };
+		3B0E627E21C8FDA1002DED0A /* QXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0E627D21C8FDA1002DED0A /* QXWebViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3B0E623F21C8EB55002DED0A /* MovieBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B0E624221C8EB55002DED0A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3B0E624321C8EB55002DED0A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3B0E624521C8EB55002DED0A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3B0E624621C8EB55002DED0A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3B0E624921C8EB55002DED0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3B0E624B21C8EB56002DED0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3B0E624E21C8EB56002DED0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3B0E625021C8EB56002DED0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B0E625121C8EB56002DED0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3B0E625E21C8EE54002DED0A /* QXBankTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QXBankTableViewController.h; sourceTree = "<group>"; };
+		3B0E625F21C8EE54002DED0A /* QXBankTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QXBankTableViewController.m; sourceTree = "<group>"; };
+		3B0E626121C8EF5F002DED0A /* QXBank.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QXBank.h; sourceTree = "<group>"; };
+		3B0E626221C8EF5F002DED0A /* QXBank.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QXBank.m; sourceTree = "<group>"; };
+		3B0E626421C8F0BF002DED0A /* QXFolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QXFolder.h; sourceTree = "<group>"; };
+		3B0E626521C8F0BF002DED0A /* QXFolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QXFolder.m; sourceTree = "<group>"; };
+		3B0E626721C8F176002DED0A /* QXMovie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QXMovie.h; sourceTree = "<group>"; };
+		3B0E626821C8F176002DED0A /* QXMovie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QXMovie.m; sourceTree = "<group>"; };
+		3B0E626A21C8FB0F002DED0A /* QXMoviePosterTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QXMoviePosterTableViewCell.h; sourceTree = "<group>"; };
+		3B0E626B21C8FB0F002DED0A /* QXMoviePosterTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QXMoviePosterTableViewCell.m; sourceTree = "<group>"; };
+		3B0E626D21C8FB78002DED0A /* QXMovieDetailTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QXMovieDetailTableViewCell.h; sourceTree = "<group>"; };
+		3B0E626E21C8FB78002DED0A /* QXMovieDetailTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QXMovieDetailTableViewCell.m; sourceTree = "<group>"; };
+		3B0E627021C8FC22002DED0A /* QXFolderTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QXFolderTableViewController.h; sourceTree = "<group>"; };
+		3B0E627121C8FC22002DED0A /* QXFolderTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QXFolderTableViewController.m; sourceTree = "<group>"; };
+		3B0E627321C8FC74002DED0A /* QXMovieTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QXMovieTableViewController.h; sourceTree = "<group>"; };
+		3B0E627421C8FC74002DED0A /* QXMovieTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QXMovieTableViewController.m; sourceTree = "<group>"; };
+		3B0E627621C8FCF5002DED0A /* QXSeekTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QXSeekTableViewController.h; sourceTree = "<group>"; };
+		3B0E627721C8FCF5002DED0A /* QXSeekTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QXSeekTableViewController.m; sourceTree = "<group>"; };
+		3B0E627921C8FD65002DED0A /* QXActionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QXActionViewController.h; sourceTree = "<group>"; };
+		3B0E627A21C8FD65002DED0A /* QXActionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QXActionViewController.m; sourceTree = "<group>"; };
+		3B0E627C21C8FDA1002DED0A /* QXWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QXWebViewController.h; sourceTree = "<group>"; };
+		3B0E627D21C8FDA1002DED0A /* QXWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QXWebViewController.m; sourceTree = "<group>"; };
+		744F45DF9B83A06A4CE49EC6 /* libPods-MovieBank.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MovieBank.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AA7AC195906C144CED2AD99 /* Pods-MovieBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBank.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieBank/Pods-MovieBank.release.xcconfig"; sourceTree = "<group>"; };
+		A7CEFB048B58046D51D7D53B /* Pods-MovieBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBank.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieBank/Pods-MovieBank.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B0E623C21C8EB55002DED0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E111703D0405DCD235D1D3F /* libPods-MovieBank.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B0E623621C8EB55002DED0A = {
+			isa = PBXGroup;
+			children = (
+				3B0E624121C8EB55002DED0A /* MovieBank */,
+				3B0E624021C8EB55002DED0A /* Products */,
+				4A36DFA98200EE8EC71087D0 /* Pods */,
+				6E1EAA87BA6683DBAD95E351 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3B0E624021C8EB55002DED0A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B0E623F21C8EB55002DED0A /* MovieBank.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B0E624121C8EB55002DED0A /* MovieBank */ = {
+			isa = PBXGroup;
+			children = (
+				3B0E625A21C8ECA0002DED0A /* Features */,
+				3B0E625821C8EC5C002DED0A /* AppEntry */,
+			);
+			path = MovieBank;
+			sourceTree = "<group>";
+		};
+		3B0E625821C8EC5C002DED0A /* AppEntry */ = {
+			isa = PBXGroup;
+			children = (
+				3B0E624221C8EB55002DED0A /* AppDelegate.h */,
+				3B0E624321C8EB55002DED0A /* AppDelegate.m */,
+				3B0E624521C8EB55002DED0A /* ViewController.h */,
+				3B0E624621C8EB55002DED0A /* ViewController.m */,
+				3B0E624821C8EB55002DED0A /* Main.storyboard */,
+				3B0E624B21C8EB56002DED0A /* Assets.xcassets */,
+				3B0E624D21C8EB56002DED0A /* LaunchScreen.storyboard */,
+				3B0E625021C8EB56002DED0A /* Info.plist */,
+				3B0E625121C8EB56002DED0A /* main.m */,
+			);
+			name = AppEntry;
+			sourceTree = "<group>";
+		};
+		3B0E625A21C8ECA0002DED0A /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				3B0E625B21C8EE13002DED0A /* Models */,
+				3B0E625D21C8EE2C002DED0A /* Views */,
+				3B0E625C21C8EE1D002DED0A /* Controllers */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		3B0E625B21C8EE13002DED0A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3B0E626121C8EF5F002DED0A /* QXBank.h */,
+				3B0E626221C8EF5F002DED0A /* QXBank.m */,
+				3B0E626421C8F0BF002DED0A /* QXFolder.h */,
+				3B0E626521C8F0BF002DED0A /* QXFolder.m */,
+				3B0E626721C8F176002DED0A /* QXMovie.h */,
+				3B0E626821C8F176002DED0A /* QXMovie.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3B0E625C21C8EE1D002DED0A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3B0E625E21C8EE54002DED0A /* QXBankTableViewController.h */,
+				3B0E625F21C8EE54002DED0A /* QXBankTableViewController.m */,
+				3B0E627021C8FC22002DED0A /* QXFolderTableViewController.h */,
+				3B0E627121C8FC22002DED0A /* QXFolderTableViewController.m */,
+				3B0E627321C8FC74002DED0A /* QXMovieTableViewController.h */,
+				3B0E627421C8FC74002DED0A /* QXMovieTableViewController.m */,
+				3B0E627621C8FCF5002DED0A /* QXSeekTableViewController.h */,
+				3B0E627721C8FCF5002DED0A /* QXSeekTableViewController.m */,
+				3B0E627921C8FD65002DED0A /* QXActionViewController.h */,
+				3B0E627A21C8FD65002DED0A /* QXActionViewController.m */,
+				3B0E627C21C8FDA1002DED0A /* QXWebViewController.h */,
+				3B0E627D21C8FDA1002DED0A /* QXWebViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3B0E625D21C8EE2C002DED0A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3B0E626A21C8FB0F002DED0A /* QXMoviePosterTableViewCell.h */,
+				3B0E626B21C8FB0F002DED0A /* QXMoviePosterTableViewCell.m */,
+				3B0E626D21C8FB78002DED0A /* QXMovieDetailTableViewCell.h */,
+				3B0E626E21C8FB78002DED0A /* QXMovieDetailTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4A36DFA98200EE8EC71087D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7CEFB048B58046D51D7D53B /* Pods-MovieBank.debug.xcconfig */,
+				7AA7AC195906C144CED2AD99 /* Pods-MovieBank.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6E1EAA87BA6683DBAD95E351 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				744F45DF9B83A06A4CE49EC6 /* libPods-MovieBank.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B0E623E21C8EB55002DED0A /* MovieBank */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B0E625521C8EB56002DED0A /* Build configuration list for PBXNativeTarget "MovieBank" */;
+			buildPhases = (
+				179A8D0278DFDBBB75ABC794 /* [CP] Check Pods Manifest.lock */,
+				3B0E623B21C8EB55002DED0A /* Sources */,
+				3B0E623C21C8EB55002DED0A /* Frameworks */,
+				3B0E623D21C8EB55002DED0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MovieBank;
+			productName = MovieBank;
+			productReference = 3B0E623F21C8EB55002DED0A /* MovieBank.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B0E623721C8EB55002DED0A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = QiyueX;
+				TargetAttributes = {
+					3B0E623E21C8EB55002DED0A = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 3B0E623A21C8EB55002DED0A /* Build configuration list for PBXProject "MovieBank" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3B0E623621C8EB55002DED0A;
+			productRefGroup = 3B0E624021C8EB55002DED0A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B0E623E21C8EB55002DED0A /* MovieBank */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B0E623D21C8EB55002DED0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B0E624F21C8EB56002DED0A /* LaunchScreen.storyboard in Resources */,
+				3B0E624C21C8EB56002DED0A /* Assets.xcassets in Resources */,
+				3B0E624A21C8EB55002DED0A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		179A8D0278DFDBBB75ABC794 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MovieBank-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B0E623B21C8EB55002DED0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B0E626C21C8FB0F002DED0A /* QXMoviePosterTableViewCell.m in Sources */,
+				3B0E626621C8F0BF002DED0A /* QXFolder.m in Sources */,
+				3B0E624721C8EB55002DED0A /* ViewController.m in Sources */,
+				3B0E625221C8EB56002DED0A /* main.m in Sources */,
+				3B0E627E21C8FDA1002DED0A /* QXWebViewController.m in Sources */,
+				3B0E626321C8EF5F002DED0A /* QXBank.m in Sources */,
+				3B0E626021C8EE54002DED0A /* QXBankTableViewController.m in Sources */,
+				3B0E627821C8FCF5002DED0A /* QXSeekTableViewController.m in Sources */,
+				3B0E627221C8FC22002DED0A /* QXFolderTableViewController.m in Sources */,
+				3B0E627521C8FC74002DED0A /* QXMovieTableViewController.m in Sources */,
+				3B0E626921C8F176002DED0A /* QXMovie.m in Sources */,
+				3B0E624421C8EB55002DED0A /* AppDelegate.m in Sources */,
+				3B0E627B21C8FD65002DED0A /* QXActionViewController.m in Sources */,
+				3B0E626F21C8FB78002DED0A /* QXMovieDetailTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3B0E624821C8EB55002DED0A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B0E624921C8EB55002DED0A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3B0E624D21C8EB56002DED0A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B0E624E21C8EB56002DED0A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3B0E625321C8EB56002DED0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3B0E625421C8EB56002DED0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3B0E625621C8EB56002DED0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7CEFB048B58046D51D7D53B /* Pods-MovieBank.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MovieBank/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = QiyueX.MovieBank;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3B0E625721C8EB56002DED0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AA7AC195906C144CED2AD99 /* Pods-MovieBank.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MovieBank/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = QiyueX.MovieBank;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B0E623A21C8EB55002DED0A /* Build configuration list for PBXProject "MovieBank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B0E625321C8EB56002DED0A /* Debug */,
+				3B0E625421C8EB56002DED0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B0E625521C8EB56002DED0A /* Build configuration list for PBXNativeTarget "MovieBank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B0E625621C8EB56002DED0A /* Debug */,
+				3B0E625721C8EB56002DED0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3B0E623721C8EB55002DED0A /* Project object */;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>fg</string>
+	<string>fgfgo</string>
+	<string>fgfgonb</string>
+	<string>yu</string>
+	<string>uft</string>
+	<string>nudsa</string>
+	<string>sad</string>
+	<string>wee wee</string>
+</array>
+</plist>

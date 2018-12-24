@@ -1,0 +1,22 @@
+PODS:
+  - AMapLocation (1.0.1)
+  - AMapNavi (1.3.2)
+  - Bolts/Tasks (1.5.0)
+  - MBProgressHUD (0.9.1)
+  - Parse (1.10.0):
+    - Bolts/Tasks (~> 1.5)
+
+DEPENDENCIES:
+  - AMapLocation
+  - AMapNavi
+  - MBProgressHUD
+  - Parse
+
+SPEC CHECKSUMS:
+  AMapLocation: d33782bd102563aae1824cb4fae8b4495376f016
+  AMapNavi: 01b4ec04204f36814bc3d320d7b548b98a3db5c5
+  Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2
+
+COCOAPODS: 0.39.0

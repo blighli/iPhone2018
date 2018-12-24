@@ -1,0 +1,469 @@
+//
+//  main.m
+//  octest01
+//
+//  Created by 贺晨韬 on 2018/10/11.
+//  Copyright © 2018年 贺晨韬. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+#define NSLog(FORMAT, ...) fprintf(stderr,"%s\n",[[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+
+int max(int x, int y){
+    return x>y?x:y;
+}
+
+int maxline(int days, int first){
+    return (days-8+first)/7;
+}
+
+void display(int year, int month, int days, int first){
+    NSArray *number = [NSArray arrayWithObjects:@"一",@"二",@"三",@"四",@"五",@"六",@"七",@"八",@"九",@"十",@"十一",@"十二", nil];
+    int i, j, counts=1;
+    
+    NSLog(@"      %@月 %d", [number objectAtIndex:month-1], year);
+    
+    NSLog(@"日 一 二 三 四 五 六");
+    
+    
+    for (i=0 ;i<(first*3+1)%21; i++)
+        printf(" ");
+    for (i = 1; first+i<=7; i++)
+        printf("%d  ", counts++);
+    printf("\n");
+    
+    for (j=1; j<=(days-7+first)/7; j++){
+        if (counts<10)
+            printf(" ");
+        for (i=0; i<7; i++){
+            printf ("%d", counts++);
+            if (i!=6 && counts<10){
+                printf("  ");
+            }
+            else if (i!=6 && counts>=10){
+                printf (" ");
+            }
+        }
+        printf("\n");
+    }
+    
+    for (i=counts; i<=days; i++){
+        printf ("%d", i);
+        if (i!=days){
+            printf (" ");
+        }
+    }
+    printf("\n");
+    
+//    printf("\n");
+}
+
+void displaywholeyear(int year, int first){
+    int monthday[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
+    int counts[12] = {1,1,1,1,1,1,1,1,1,1,1,1};
+    if (year%4==0){
+        monthday[1] = 29;
+        if (year%100==0){
+            monthday[1] = 28;
+            if (year%400==0){
+                monthday[1] = 29;
+            }
+        }
+    }
+    int everyfirstday[12]={first};
+    int everylastday[12]={0};
+    
+    int i, j, k;
+    int maxlinenumber;
+    
+    for (i=1; i<12; i++){
+        everyfirstday[i] = (everyfirstday[i-1] + monthday[i-1])%7;
+//        NSLog(@"%d--%d", i, everyfirstday[i]);
+    }
+    for (i=0; i<12; i++){
+        everylastday[i] = (everyfirstday[i] + monthday[i] - 1)%7;
+//        NSLog(@"%d--%d", i, everylastday[i]);
+    }
+    
+    NSLog(@"                            %d",year);
+    
+    //1月到3月
+    maxlinenumber = max(maxline(monthday[0],everyfirstday[0]),max(maxline(monthday[1], everyfirstday[1]),maxline(monthday[2], everyfirstday[2])));
+    NSLog(@"         一月                    二月                    三月");
+    NSLog(@"日 一 二 三 四 五 六  日 一 二 三 四 五 六  日 一 二 三 四 五 六");
+    for (k=0; k<3; k++){
+        for (i=0 ;i<(everyfirstday[k]*3+1)%21; i++)
+            printf(" ");
+        for (i = 1; everyfirstday[k]+i<=7; i++)
+            printf("%d  ", counts[k]++);
+//        printf (" ");
+    }
+    printf ("\n");
+    
+    for (j=1; j<=maxlinenumber; j++){
+        for (k=0; k<3; k++){
+            if (counts[k]<10)
+                printf(" ");
+            for (i=0; i<7; i++){
+                if (counts[k]>monthday[k]){
+                    printf("   ");
+                    continue;
+                }
+                
+                printf ("%d", counts[k]++);
+                if (i!=6 && counts[k]<10){
+                    printf("  ");
+                }
+                else if (i!=6 && counts[k]>=10){
+                    printf (" ");
+                }
+            }
+            if (counts[k]>monthday[k]) printf(" ");
+            else printf ("  ");
+        }
+        printf("\n");
+    }
+    
+    for (k=0; k<3; k++){
+        for (i=counts[k]; i<=monthday[k]; i++){
+            printf ("%d", i);
+            if (i!=monthday[k]){
+                printf (" ");
+            }
+        }
+        int restblank = 6 - everylastday[k];
+        if (counts[k]>monthday[k])
+            printf("                      ");
+        else{
+            for (i=0; i<restblank; i++)
+                printf ("   ");
+            printf("  ");
+        }
+    }
+    printf("\n");
+    
+    
+    
+    //4月到6月
+    maxlinenumber = max(maxline(monthday[3],everyfirstday[3]),max(maxline(monthday[4], everyfirstday[4]),maxline(monthday[5], everyfirstday[5])));
+    NSLog(@"         四月                    五月                    六月");
+    NSLog(@"日 一 二 三 四 五 六  日 一 二 三 四 五 六  日 一 二 三 四 五 六");
+    for (k=3; k<6; k++){
+        for (i=0 ;i<(everyfirstday[k]*3+1)%21; i++)
+            printf(" ");
+        for (i = 1; everyfirstday[k]+i<=7; i++)
+            printf("%d  ", counts[k]++);
+        //        printf (" ");
+    }
+    printf ("\n");
+    
+    for (j=1; j<=maxlinenumber; j++){
+        for (k=3; k<6; k++){
+            if (counts[k]<10)
+                printf(" ");
+            for (i=0; i<7; i++){
+                if (counts[k]>monthday[k]){
+                    printf("   ");
+                    continue;
+                }
+                printf ("%d", counts[k]++);
+                if (i!=6 && counts[k]<10){
+                    printf("  ");
+                }
+                else if (i!=6 && counts[k]>=10){
+                    printf (" ");
+                }
+            }
+            if (counts[k]>monthday[k]) printf(" ");
+            else printf ("  ");
+        }
+        printf("\n");
+    }
+    
+    for (k=3; k<6; k++){
+        for (i=counts[k]; i<=monthday[k]; i++){
+            printf ("%d", i);
+            if (i!=monthday[k]){
+                printf (" ");
+            }
+        }
+        int restblank = 6 - everylastday[k];
+        if (counts[k]>monthday[k])
+            printf("                      ");
+        else{
+            for (i=0; i<restblank; i++)
+                printf ("   ");
+            printf("  ");
+        }
+    }
+    printf("\n");
+    
+    //7月到9月
+    maxlinenumber = max(maxline(monthday[6],everyfirstday[6]),max(maxline(monthday[7], everyfirstday[7]),maxline(monthday[8], everyfirstday[8])));
+    NSLog(@"         七月                    八月                    九月");
+    NSLog(@"日 一 二 三 四 五 六  日 一 二 三 四 五 六  日 一 二 三 四 五 六");
+    for (k=6; k<9; k++){
+        for (i=0 ;i<(everyfirstday[k]*3+1)%21; i++)
+            printf(" ");
+        for (i = 1; everyfirstday[k]+i<=7; i++)
+            printf("%d  ", counts[k]++);
+        //        printf (" ");
+    }
+    printf ("\n");
+    
+    for (j=1; j<=maxlinenumber; j++){
+        for (k=6; k<9; k++){
+            if (counts[k]<10)
+                printf(" ");
+            for (i=0; i<7; i++){
+                if (counts[k]>monthday[k]){
+                    printf("   ");
+                    continue;
+                }
+                printf ("%d", counts[k]++);
+                if (i!=6 && counts[k]<10){
+                    printf("  ");
+                }
+                else if (i!=6 && counts[k]>=10){
+                    printf (" ");
+                }
+            }
+            if (counts[k]>monthday[k]) printf(" ");
+            else printf ("  ");
+        }
+        printf("\n");
+    }
+    
+    for (k=6; k<9; k++){
+        for (i=counts[k]; i<=monthday[k]; i++){
+            printf ("%d", i);
+            if (i!=monthday[k]){
+                printf (" ");
+            }
+        }
+        int restblank = 6 - everylastday[k];
+        if (counts[k]>monthday[k])
+            printf("                      ");
+        else{
+            for (i=0; i<restblank; i++)
+                printf ("   ");
+            printf("  ");
+        }
+    }
+    printf("\n");
+    
+    //10月到12月
+    maxlinenumber = max(maxline(monthday[9],everyfirstday[9]),max(maxline(monthday[10], everyfirstday[10]),maxline(monthday[11], everyfirstday[11])));
+    NSLog(@"         十月                   十一月                   十二月");
+    NSLog(@"日 一 二 三 四 五 六  日 一 二 三 四 五 六  日 一 二 三 四 五 六");
+    for (k=9; k<12; k++){
+        for (i=0 ;i<(everyfirstday[k]*3+1)%21; i++)
+            printf(" ");
+        for (i = 1; everyfirstday[k]+i<=7; i++)
+            printf("%d  ", counts[k]++);
+        //        printf (" ");
+    }
+    printf ("\n");
+    
+    for (j=1; j<=maxlinenumber; j++){
+        for (k=9; k<12; k++){
+            if (counts[k]<10)
+                printf(" ");
+            for (i=0; i<7; i++){
+                if (counts[k]>monthday[k]){
+                    printf("   ");
+                    continue;
+                }
+                printf ("%d", counts[k]++);
+                if (i!=6 && counts[k]<10){
+                    printf("  ");
+                }
+                else if (i!=6 && counts[k]>=10){
+                    printf (" ");
+                }
+            }
+            if (counts[k]>monthday[k]) printf(" ");
+            else printf ("  ");
+        }
+        printf("\n");
+    }
+    
+    for (k=9; k<12; k++){
+        for (i=counts[k]; i<=monthday[k]; i++){
+            printf ("%d", i);
+            if (i!=monthday[k]){
+                printf (" ");
+            }
+        }
+        int restblank = 6 - everylastday[k];
+        if (counts[k]>monthday[k])
+            printf("                      ");
+        else{
+            for (i=0; i<restblank; i++)
+                printf ("   ");
+            printf("  ");
+        }
+    }
+    printf("\n");
+    
+    
+}
+
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        NSDate *now = [NSDate date];
+        //当前日期
+        //            NSLog(@"%@",now);
+        NSDateFormatter  *formatter = [[NSDateFormatter alloc] init];
+        //日期格式
+        [formatter setDateFormat:@"yyyy"];
+        NSInteger nowyear = [[formatter stringFromDate:now] integerValue];
+        //获取年份
+        [formatter setDateFormat:@"MM"];
+        NSInteger nowmonth = [[formatter stringFromDate:now] integerValue];
+        //获取月份
+        
+        NSCalendar *calendar = [[NSCalendar alloc]  initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        //calender对象
+        
+        NSDateComponents *comps = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitWeekday fromDate:now];
+        //
+        
+        NSTimeInterval oneday = 24*60*60;
+        NSDate *firstnowdate = [now dateByAddingTimeInterval:-oneday*([comps day]-1)];
+        NSCalendar *firstcalender = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        NSDateComponents *firstcomps = [firstcalender components:NSCalendarUnitWeekday fromDate:firstnowdate];
+        NSInteger nowweekday = [comps weekday];
+        NSInteger weekday = [firstcomps weekday];
+        // 获取当前月份第一天星期
+        
+        if (argc == 1){
+            
+            
+            NSInteger monthsdays = [calendar rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:now].length;
+            // 获取月份天数
+            
+            weekday = (weekday+6)%7;
+        
+            display(nowyear,nowmonth,monthsdays,weekday);
+        }
+        else if (argc == 2){
+            
+            NSString *totalyear = [[NSString alloc] initWithUTF8String:argv[1]];
+            int theyear = [totalyear intValue];
+            
+            if ([totalyear characterAtIndex:0] <'0' || [totalyear characterAtIndex:0] >'9'){
+                NSLog(@"cal: illegal option");
+                NSLog(@"Usage: cal [general options] [-m month] [year]");
+                NSLog(@"       cal [general options] [[month] year]");
+                return 0;
+            }
+            else if (theyear<1 || theyear > 9999){
+                NSLog(@"cal: year '%d' not in range 1..9999", theyear);
+                return 0;
+            }
+            
+            NSDateComponents *comps = [[NSDateComponents alloc] init];
+            [comps setMonth:1];
+            [comps setYear:theyear];
+            [comps setDay:1];
+            //目标年月1日
+            
+            NSCalendar *datecalendar = [[NSCalendar alloc]  initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+            NSDate *date = [datecalendar dateFromComponents:comps];
+            //创建date日期
+            NSTimeInterval time = [now timeIntervalSinceDate:date];
+            int days = time/(24*60*60);
+            NSInteger dateweekday;
+            
+            if (days>0){
+                dateweekday = (nowweekday + 7 - (days%7))%7;
+            }
+            else {
+                days--;
+                dateweekday = (nowweekday + 7 - (days%7))%7;
+            }
+//            NSLog(@"%d",dateweekday);
+            dateweekday = (dateweekday + 6)%7;
+            
+            displaywholeyear(theyear, dateweekday);
+            
+        }
+        else if (argc == 3){
+            
+            NSString *stryear=[[NSString alloc] initWithUTF8String:argv[2]];
+            NSString *strmonth=[[NSString alloc] initWithUTF8String:argv[1]];
+
+            int year = [stryear intValue];
+            int month = [strmonth intValue];
+            bool command = [strmonth isEqualToString:@"-m"];
+            if ([strmonth characterAtIndex:0] >='0' &&[strmonth characterAtIndex:0] <='9'){
+                if (year<1 || year>9999){
+                    NSLog(@"cal: year '%d' not in range 1..9999", year);
+                    return 0;
+                }
+                else if (month<1 || month>12){
+                    NSLog(@"cal:  %d is neither a month number (1..12)", month);
+                    return 0;
+                }
+            }
+            else {
+                if (command){
+                    year = nowyear;
+                    month = [stryear intValue];
+                    
+                    if (month<1 || month>12){
+                        NSLog(@"cal:  %d is neither a month number (1..12)", month);
+                        return 0;
+                    }
+                }
+                else {
+                    NSLog(@"cal: illegal option");
+                    NSLog(@"Usage: cal [general options] [-m month] [year]");
+                    NSLog(@"       cal [general options] [[month] year]");
+                    return 0;
+                }
+            }
+            
+            
+            NSDateComponents *comps = [[NSDateComponents alloc] init];
+            [comps setMonth:month];
+            [comps setYear:year];
+            [comps setDay:1];
+            //目标年月1日
+            
+            NSCalendar *datecalendar = [[NSCalendar alloc]  initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+            NSDate *date = [datecalendar dateFromComponents:comps];
+            //创建date日期
+            NSInteger monthsdays = [datecalendar rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:date].length;
+            //天数
+
+            NSTimeInterval time = [now timeIntervalSinceDate:date];
+            int days = time/(24*60*60);
+//            NSLog(@"%d",days);
+            //时间差
+            
+            NSInteger dateweekday;
+            if (days>0){
+                dateweekday = (nowweekday + 7 - (days%7))%7;
+            }
+            else {
+                days--;
+                dateweekday = (nowweekday + 7 - (days%7))%7;
+            }
+            
+//            NSLog(@"%d -- %d",nowweekday,dateweekday);
+            
+            dateweekday = (dateweekday + 6)%7;
+            display(year,month,monthsdays,dateweekday);
+        }
+        else if (argc > 3){
+            NSLog(@"cal: illegal option");
+            NSLog(@"Usage: cal [general options] [-m month] [year]");
+            NSLog(@"       cal [general options] [[month] year]");
+            return 0;
+        }
+    }
+    return 0;
+}
