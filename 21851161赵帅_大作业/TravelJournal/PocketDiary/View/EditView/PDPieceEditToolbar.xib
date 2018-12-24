@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad12_9rounded" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PDPieceEditToolbar">
+            <connections>
+                <outlet property="addImageBtn" destination="cxu-R9-5Sy" id="tBV-wM-z2U"/>
+                <outlet property="leftBtn" destination="uk2-eu-1Kr" id="ACT-1h-xG9"/>
+                <outlet property="returnPieceViewBtn" destination="yc3-uH-DKf" id="crl-m9-LJ7"/>
+                <outlet property="rightBtn" destination="No1-uG-xQp" id="nyh-zm-KvM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="405" height="56"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0t-RB-Jc3">
+                    <rect key="frame" x="122.5" y="-6" width="160" height="56"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uk2-eu-1Kr">
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="56"/>
+                            <inset key="imageEdgeInsets" minX="25" minY="20" maxX="25" maxY="20"/>
+                            <state key="normal" image="leftArrow.png">
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="disabled" image="leftArrowHighlight.png">
+                                <color key="titleColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted" image="leftArrowHighlight.png"/>
+                            <connections>
+                                <action selector="touchedLeftBtn:" destination="-1" eventType="touchUpInside" id="7AP-7c-XJg"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="No1-uG-xQp">
+                            <rect key="frame" x="80" y="0.0" width="80" height="56"/>
+                            <inset key="imageEdgeInsets" minX="25" minY="20" maxX="25" maxY="20"/>
+                            <state key="normal" image="rightArrow.png">
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="disabled" image="rightArrowHighlight.png">
+                                <color key="titleColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted" image="rightArrowHighlight.png"/>
+                            <connections>
+                                <action selector="touchedRightBtn:" destination="-1" eventType="touchUpInside" id="h6O-7D-hRg"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="No1-uG-xQp" firstAttribute="top" secondItem="H0t-RB-Jc3" secondAttribute="top" id="2K4-CT-6j3"/>
+                        <constraint firstAttribute="bottom" secondItem="uk2-eu-1Kr" secondAttribute="bottom" id="BVk-Nv-0sR"/>
+                        <constraint firstItem="No1-uG-xQp" firstAttribute="width" secondItem="uk2-eu-1Kr" secondAttribute="width" id="YKn-Pl-gBf"/>
+                        <constraint firstItem="No1-uG-xQp" firstAttribute="leading" secondItem="uk2-eu-1Kr" secondAttribute="trailing" id="aab-z2-Uyv"/>
+                        <constraint firstAttribute="trailing" secondItem="No1-uG-xQp" secondAttribute="trailing" id="bAU-Qz-EyW"/>
+                        <constraint firstAttribute="bottom" secondItem="No1-uG-xQp" secondAttribute="bottom" id="qeL-4g-x7I"/>
+                        <constraint firstItem="uk2-eu-1Kr" firstAttribute="leading" secondItem="H0t-RB-Jc3" secondAttribute="leading" id="t0A-QK-Txi"/>
+                        <constraint firstAttribute="width" constant="160" id="vgp-kz-781"/>
+                        <constraint firstItem="uk2-eu-1Kr" firstAttribute="top" secondItem="H0t-RB-Jc3" secondAttribute="top" id="x5p-DW-ijX"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxu-R9-5Sy">
+                    <rect key="frame" x="339" y="-6" width="66" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="66" id="Ah5-OC-sG2"/>
+                    </constraints>
+                    <inset key="contentEdgeInsets" minX="15" minY="15" maxX="25" maxY="15"/>
+                    <state key="normal" image="photo.png">
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" image="photoHighlight.png"/>
+                    <connections>
+                        <action selector="touchedAddImageBtn:" destination="-1" eventType="touchUpInside" id="VPW-wO-8gZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yc3-uH-DKf">
+                    <rect key="frame" x="0.0" y="-6" width="66" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="66" id="KYA-ud-OVm"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="25" minY="15" maxX="15" maxY="15"/>
+                    <state key="normal" image="piece.png">
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" image="pieceHighlight.png"/>
+                    <connections>
+                        <action selector="touchedReturnBtn:" destination="-1" eventType="touchUpInside" id="DhR-ED-8vQ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="cxu-R9-5Sy" secondAttribute="trailing" id="A0k-6a-9Uj"/>
+                <constraint firstItem="yc3-uH-DKf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Egu-bm-eCl"/>
+                <constraint firstItem="H0t-RB-Jc3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-6" id="GXb-hi-hDZ"/>
+                <constraint firstItem="cxu-R9-5Sy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-6" id="J27-7J-RRl"/>
+                <constraint firstItem="yc3-uH-DKf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-6" id="MoJ-ln-YbT"/>
+                <constraint firstAttribute="bottom" secondItem="cxu-R9-5Sy" secondAttribute="bottom" constant="6" id="RCu-dz-rwx"/>
+                <constraint firstAttribute="centerX" secondItem="H0t-RB-Jc3" secondAttribute="centerX" id="op9-6r-hkX"/>
+                <constraint firstAttribute="bottom" secondItem="yc3-uH-DKf" secondAttribute="bottom" constant="6" id="qFw-XG-sdy"/>
+                <constraint firstAttribute="bottom" secondItem="H0t-RB-Jc3" secondAttribute="bottom" constant="6" id="rU6-K5-fH9"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="375.5" y="2.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="leftArrow.png" width="96" height="96"/>
+        <image name="leftArrowHighlight.png" width="96" height="96"/>
+        <image name="photo.png" width="96" height="96"/>
+        <image name="photoHighlight.png" width="96" height="96"/>
+        <image name="piece.png" width="96" height="96"/>
+        <image name="pieceHighlight.png" width="96" height="96"/>
+        <image name="rightArrow.png" width="96" height="96"/>
+        <image name="rightArrowHighlight.png" width="96" height="96"/>
+    </resources>
+</document>

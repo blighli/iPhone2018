@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad12_9rounded" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PDImagePickerController">
+            <connections>
+                <outlet property="collectionView" destination="ifd-Pi-llP" id="giY-zO-JVj"/>
+                <outlet property="titleBarView" destination="5id-Iy-gjd" id="5gk-HF-hgt"/>
+                <outlet property="titleLabel" destination="98m-wl-t83" id="rwO-rO-n21"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="422" height="280"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5id-Iy-gjd">
+                    <rect key="frame" x="0.0" y="0.0" width="422" height="56"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6n-AQ-1VS">
+                            <rect key="frame" x="0.0" y="0.0" width="68" height="56"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="68" id="nO6-vs-vJB"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <state key="normal" title="取消"/>
+                            <connections>
+                                <action selector="touchedCancel:" destination="-1" eventType="touchUpInside" id="HGO-hL-fTm"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcB-Gl-aOc">
+                            <rect key="frame" x="354" y="0.0" width="68" height="56"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="68" id="dOf-gd-EjN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <state key="normal" title="完成"/>
+                            <connections>
+                                <action selector="touchedDone:" destination="-1" eventType="touchUpInside" id="661-Gm-FTh"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择要添加的图片" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98m-wl-t83">
+                            <rect key="frame" x="101" y="0.0" width="220" height="56"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="220" id="jkR-6n-7xo"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="98m-wl-t83" firstAttribute="centerX" secondItem="5id-Iy-gjd" secondAttribute="centerX" id="6bs-PT-bvU"/>
+                        <constraint firstAttribute="bottom" secondItem="98m-wl-t83" secondAttribute="bottom" id="7xA-ej-Jvf"/>
+                        <constraint firstItem="98m-wl-t83" firstAttribute="top" secondItem="5id-Iy-gjd" secondAttribute="top" id="8MB-ra-wUN"/>
+                        <constraint firstAttribute="bottom" secondItem="lcB-Gl-aOc" secondAttribute="bottom" id="Y2d-8C-bWZ"/>
+                        <constraint firstAttribute="bottom" secondItem="S6n-AQ-1VS" secondAttribute="bottom" id="bJC-GG-IpL"/>
+                        <constraint firstItem="S6n-AQ-1VS" firstAttribute="leading" secondItem="5id-Iy-gjd" secondAttribute="leading" id="eAI-t5-IKa"/>
+                        <constraint firstItem="lcB-Gl-aOc" firstAttribute="top" secondItem="5id-Iy-gjd" secondAttribute="top" id="nQd-e5-cIQ"/>
+                        <constraint firstAttribute="height" constant="56" id="qfr-rW-kLB"/>
+                        <constraint firstItem="S6n-AQ-1VS" firstAttribute="top" secondItem="5id-Iy-gjd" secondAttribute="top" id="xBi-tO-oSh"/>
+                        <constraint firstAttribute="trailing" secondItem="lcB-Gl-aOc" secondAttribute="trailing" id="z3z-4d-Dh9"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ifd-Pi-llP">
+                    <rect key="frame" x="0.0" y="56" width="422" height="224"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="mUK-xe-3w3">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Jhc-Pc-hp6"/>
+                        <outlet property="delegate" destination="-1" id="eFl-Uy-yb4"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5id-Iy-gjd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5NQ-Vb-Q0Y"/>
+                <constraint firstItem="5id-Iy-gjd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="IWW-YT-wc0"/>
+                <constraint firstAttribute="bottom" secondItem="ifd-Pi-llP" secondAttribute="bottom" id="YEO-Bl-e8F"/>
+                <constraint firstAttribute="trailing" secondItem="5id-Iy-gjd" secondAttribute="trailing" id="YnL-mz-rhe"/>
+                <constraint firstItem="ifd-Pi-llP" firstAttribute="top" secondItem="5id-Iy-gjd" secondAttribute="bottom" id="Zh8-X9-PEy"/>
+                <constraint firstAttribute="trailing" secondItem="ifd-Pi-llP" secondAttribute="trailing" id="tL8-Cc-yyC"/>
+                <constraint firstItem="ifd-Pi-llP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ule-nw-sdW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="223" y="42"/>
+        </view>
+    </objects>
+</document>
