@@ -1,0 +1,31 @@
+//
+//  PrefixHeader.pch
+//  DontTouchWhiteBlock
+//
+//  Created by Marveliu on 18/11/20.
+//  Copyright © 2018年 Marveliu. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "UIView+Extension.h"
+#import "BHAppPackage.h"
+#import "AppUserDefaults.h"
+
+#define ScreenW [UIScreen mainScreen].bounds.size.width
+#define ScreenH [UIScreen mainScreen].bounds.size.height
+#define BlcokH [UIScreen mainScreen].bounds.size.height / 4
+#define TotalLines 40
+#define JieJiTotalLines 100
+
+
+
+#define kStatusBarHeight     [[UIApplication sharedApplication] statusBarFrame].size.height
+#define kNavBarHeight        44.0
+#define kTopHeight           (kStatusBarHeight + kNavBarHeight)
+#define KHomeIndicatorHeight ([[UIApplication sharedApplication] statusBarFrame].size.height > 20 ? 34 : 0)
+#define kTabBarHeight        ([[UIApplication sharedApplication] statusBarFrame].size.height > 20 ? 83 : 49)
+#define _L(str)   NSLocalizedString(str,  nil)
+
+#endif /* PrefixHeader_pch */

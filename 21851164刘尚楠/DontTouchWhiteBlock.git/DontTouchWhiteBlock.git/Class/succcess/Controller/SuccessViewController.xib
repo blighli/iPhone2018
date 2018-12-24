@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SuccessViewController">
+            <connections>
+                <outlet property="bestScoreLabel" destination="Sqs-6B-6N7" id="pTy-JD-5z4"/>
+                <outlet property="timeLabel" destination="Xud-DF-RKj" id="Jzf-Ea-0cM"/>
+                <outlet property="titleLabel" destination="lET-gC-yuH" id="cPB-0D-cCc"/>
+                <outlet property="view" destination="plh-di-emt" id="BZi-aB-EJo"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="plh-di-emt">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="别踩白块" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgO-vn-nGv">
+                    <rect key="frame" x="30" y="15" width="82" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1q-4t-7Xp">
+                    <rect key="frame" x="98.5" y="602" width="39" height="35"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <state key="normal" title="重来"/>
+                    <connections>
+                        <action selector="again" destination="-1" eventType="touchUpInside" id="fwY-OL-N5M"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="My0-Po-bvE">
+                    <rect key="frame" x="237.5" y="602" width="39" height="35"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <state key="normal" title="返回"/>
+                    <connections>
+                        <action selector="back" destination="-1" eventType="touchUpInside" id="VfI-Na-xvR"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xud-DF-RKj">
+                    <rect key="frame" x="107.5" y="217" width="161.5" height="84"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqs-6B-6N7" userLabel="bestTime">
+                    <rect key="frame" x="138.5" y="417" width="98" height="47"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="经典" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lET-gC-yuH">
+                    <rect key="frame" x="148" y="119" width="80.5" height="48"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.19815984989999999" green="0.81630859369999997" blue="0.36125440409999998" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Sqs-6B-6N7" firstAttribute="centerX" secondItem="plh-di-emt" secondAttribute="centerX" id="0kK-QH-e3g"/>
+                <constraint firstItem="wgO-vn-nGv" firstAttribute="top" secondItem="plh-di-emt" secondAttribute="top" constant="15" id="1Up-nZ-096"/>
+                <constraint firstItem="lET-gC-yuH" firstAttribute="top" secondItem="wgO-vn-nGv" secondAttribute="bottom" constant="80" id="BFL-n0-Syd"/>
+                <constraint firstItem="Sqs-6B-6N7" firstAttribute="top" secondItem="lET-gC-yuH" secondAttribute="bottom" constant="250" id="HAi-IO-7jK"/>
+                <constraint firstItem="My0-Po-bvE" firstAttribute="leading" secondItem="plh-di-emt" secondAttribute="centerX" constant="50" id="Htv-3J-BBD"/>
+                <constraint firstAttribute="bottom" secondItem="My0-Po-bvE" secondAttribute="bottom" constant="30" id="JeB-Xq-paw"/>
+                <constraint firstAttribute="bottom" secondItem="b1q-4t-7Xp" secondAttribute="bottom" constant="30" id="StG-c4-m2f"/>
+                <constraint firstItem="Xud-DF-RKj" firstAttribute="top" secondItem="lET-gC-yuH" secondAttribute="bottom" constant="50" id="aj0-8n-8Nb"/>
+                <constraint firstItem="lET-gC-yuH" firstAttribute="centerX" secondItem="plh-di-emt" secondAttribute="centerX" id="hIB-Hb-EQM"/>
+                <constraint firstItem="wgO-vn-nGv" firstAttribute="leading" secondItem="plh-di-emt" secondAttribute="leading" constant="30" id="k1k-vr-bP9"/>
+                <constraint firstItem="b1q-4t-7Xp" firstAttribute="trailing" secondItem="plh-di-emt" secondAttribute="centerX" constant="-50" id="lro-LA-06i"/>
+                <constraint firstItem="Xud-DF-RKj" firstAttribute="centerX" secondItem="plh-di-emt" secondAttribute="centerX" id="pIS-46-UDG"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+        </view>
+    </objects>
+</document>
