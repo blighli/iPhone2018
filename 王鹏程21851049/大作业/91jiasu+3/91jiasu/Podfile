@@ -1,0 +1,30 @@
+platform :ios, ‘8.0’
+
+
+# ruby语法
+# target数组 如果有新的target直接加入该数组
+targetsArray = [‘91VPN’]
+# 循环
+targetsArray.each do |t|
+    target t do
+        pod 'AFNetworking', '~> 3.1.0'
+        pod 'SDWebImage', '~> 4.0.0'
+        pod 'MBProgressHUD', '~> 1.0.0'
+        pod 'JSONModel', '~> 1.7.0'
+        
+        
+        pod 'Masonry', '~> 1.0.2'
+        pod 'ReactiveObjC'
+        pod 'MJRefresh', '~> 3.1.12'
+        pod 'IQKeyboardManager', '~> 4.0.11'
+#        pod 'Base64', '~> 1.1.2'
+        pod 'FLAnimatedImage', '~> 1.0'
+        pod 'FDFullscreenPopGesture', '1.1'
+        pod 'UMengUShare/UI'
+        pod 'UMengUShare/Social/WeChat'
+        pod 'UMengUShare/Social/QQ'
+        pod 'JPush'
+        pod 'Bugly'
+    end
+use_frameworks!
+end

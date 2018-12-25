@@ -1,0 +1,83 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - Bugly (2.4.8)
+  - FDFullscreenPopGesture (1.1)
+  - FLAnimatedImage (1.0.12)
+  - IQKeyboardManager (4.0.11)
+  - JCore (1.1.5)
+  - JPush (3.0.6):
+    - JCore (~> 1.1.1)
+  - JSONModel (1.7.0)
+  - Masonry (1.0.2)
+  - MBProgressHUD (1.0.0)
+  - MJRefresh (3.1.12)
+  - ReactiveObjC (3.0.0)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+  - UMengUShare/Core (6.4.5):
+    - UMengUShare/Network
+  - UMengUShare/Network (6.4.5)
+  - UMengUShare/Social/QQ (6.4.5):
+    - UMengUShare/Core
+    - UMengUShare/Social/ReducedQQ
+  - UMengUShare/Social/ReducedQQ (6.4.5):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedWeChat (6.4.5):
+    - UMengUShare/Core
+  - UMengUShare/Social/WeChat (6.4.5):
+    - UMengUShare/Core
+    - UMengUShare/Social/ReducedWeChat
+  - UMengUShare/UI (6.4.5):
+    - UMengUShare/Core
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.1.0)
+  - Bugly
+  - FDFullscreenPopGesture (= 1.1)
+  - FLAnimatedImage (~> 1.0)
+  - IQKeyboardManager (~> 4.0.11)
+  - JPush
+  - JSONModel (~> 1.7.0)
+  - Masonry (~> 1.0.2)
+  - MBProgressHUD (~> 1.0.0)
+  - MJRefresh (~> 3.1.12)
+  - ReactiveObjC
+  - SDWebImage (~> 4.0.0)
+  - UMengUShare/Social/QQ
+  - UMengUShare/Social/WeChat
+  - UMengUShare/UI
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Bugly: da3c02408c14838d498429320545a8e439392978
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  IQKeyboardManager: 83eae5318483a34eb2069ef413d195b97605232e
+  JCore: 9bd9c770c877c583d98b90a68792b8361974c231
+  JPush: c41be50eb1a574a66aeb68d237f00a4ec6ec3a82
+  JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  UMengUShare: a5711c54e640b04e3048e931d2b88d50f9cfa55c
+
+PODFILE CHECKSUM: d4ebcd4914b2f792b60e091dc85206c905345408
+
+COCOAPODS: 1.4.0
