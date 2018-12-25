@@ -1,0 +1,58 @@
+//
+//  PrefixHeader.pch
+//  CZBaseProjectDemo
+//
+//  Created by weichengzong on 2017/7/27.
+//  Copyright © 2017年 weichengzong. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//
+#import <AFNetworking/AFNetworking.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <Masonry/Masonry.h>
+#import <JSONModel/JSONModel.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+//#import <MJRefresh/MJRefresh.h>
+#import <UMSocialCore/UMSocialCore.h>
+#import "ReactiveObjC.h"
+#import "AvoidCrash.h"
+//static
+#import "Macros.h"
+#import "AppConfig.h"
+#import "ApiFile.h"
+
+//My
+#import "Util.h"
+#import "AFNetInterFaceManager.h"
+#import "MyUserInfo.h"
+#import "CZHandlerEnterBackground.h"
+
+//category
+#import "UIView+AFAcitivityIndicator.h"
+#import "UIView+Border.h"
+#import "UIView+MessageBorder.h"
+#import "UIColor+HEX.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
+#import "UIViewController+TopBarMessage.h"
+#import "UIButton+CZEdgeInsets.h"
+#import "UIImage+CZ.h"
+//3
+#import "SandBoxHelper.h"
+#import "IAPManager.h"
+#import "NSDate+category.h"
+#import "NSString+category.h"
+//#import <ShareSDK/ShareSDK.h>
+//#import <ShareSDKConnector/ShareSDKConnector.h>
+//#import <TencentOpenAPI/TencentOAuth.h>
+//#import <TencentOpenAPI/QQApiInterface.h>
+//#import "WXApi.h"
+//#import "WeiboSDK.h"
+
+
+
+
+#endif /* PrefixHeader_pch */
